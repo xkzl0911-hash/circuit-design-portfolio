@@ -7,8 +7,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7578,
-      "sha256": "cb48716c74173cbf64e7eedd044882d30f86b255b7f616b6dd0f59e807a6b069"
+      "bytes": 6113,
+      "sha256": "63b17b4bb0b6f97a4dd13d34e5829ab36d2fd77b9de2912ae235aaa088f2331f"
     },
     {
       "path": "reports/AI/AI_CIM_논문연구_설계기획서.pdf",
@@ -386,16 +386,6 @@
       "sha256": "398230f81951b3f2170658faa7600e08123519c5841becc930c3bd2d672b5a46"
     },
     {
-      "path": "reports/아날로그/아날로그_HW1_김의연_오연재 - 복사본.pdf",
-      "bytes": 6807351,
-      "sha256": "a9daa35281e6f070fe81f24a20898448b5108af3ef62740af0e43cc7fcf63562"
-    },
-    {
-      "path": "reports/아날로그/아날로그_HW1_김의연_오연재 - 복사본_text.txt",
-      "bytes": 33459,
-      "sha256": "466b07deab7cb480701c0d7ef38030f89a2b0ec25eaab110fabf6e10fb345ac3"
-    },
-    {
       "path": "reports/아날로그/아날로그_HW1_김의연_오연재.pdf",
       "bytes": 6243528,
       "sha256": "7cfdf66fa75ef61ce030bebe077e38bc4e0cdcf87a097c707785e3587308a97d"
@@ -406,16 +396,6 @@
       "sha256": "8191a59adaa4b4b998de21c31e37b01485528698a0808fa6019ce4182a878dc7"
     },
     {
-      "path": "reports/아날로그/아날로그_HW2_김의연_오연재 - 복사본.pdf",
-      "bytes": 10327916,
-      "sha256": "0de7977c11e46b83505e58fca6d33cbda8e5a52beeeacf97c183cd5eb45514ba"
-    },
-    {
-      "path": "reports/아날로그/아날로그_HW2_김의연_오연재 - 복사본_text.txt",
-      "bytes": 25558,
-      "sha256": "99bceb04e6dab5c4a02f5b5d9cd10270f5b651946b25d13a5dc654fd6c2c67ee"
-    },
-    {
       "path": "reports/아날로그/아날로그_HW2_김의연_오연재.pdf",
       "bytes": 10266608,
       "sha256": "042e8d26df89cb3b78af63c6fa570d379bbf36ac5ed69d46a741d7a0155dbda0"
@@ -424,16 +404,6 @@
       "path": "reports/아날로그/아날로그_HW2_김의연_오연재_text.txt",
       "bytes": 25546,
       "sha256": "32de46261bd025a94adca84ef8a4ae07bc640cbecc70cadd4dc47271f25be55d"
-    },
-    {
-      "path": "reports/아날로그/아날로그_HW3_김의연_오연재 - 복사본.pdf",
-      "bytes": 3150131,
-      "sha256": "255ebb5dcb28b42e678a5bbf2ca89a4ba9b590e693db64cec9b971af79e20869"
-    },
-    {
-      "path": "reports/아날로그/아날로그_HW3_김의연_오연재 - 복사본_text.txt",
-      "bytes": 22718,
-      "sha256": "498554346606877c59717d968d87efb22b47f366372120a7fa4a38f1b472dfc9"
     },
     {
       "path": "reports/아날로그/아날로그_HW3_김의연_오연재.pdf",
