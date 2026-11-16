@@ -15,7 +15,7 @@
 | 메모리 | 6T and 7T SRAM Design | SRAM 셀·주변회로 설계와 전력·지연·면적 비교 | [PDF](reports/Memory/6T%20and%207T%20SRAM%20Design.pdf) · [본문](reports/Memory/6T%20and%207T%20SRAM%20Design.txt) |
 | 메모리 | 1K DRAM Architecture | 1024bit DRAM의 8×8·8×4 셀 배열 구성 비교 | [PDF](reports/Memory/1K%20DRAM%20Architecture.pdf) · [본문](reports/Memory/1K%20DRAM%20Architecture.txt) |
 | 집적회로 설계 | 4-bit CMOS Image Sensor | 4×4 픽셀, 4bit 파이프라인 ADC, 64bit SRAM, 4bit 출력 레지스터 | [PDF](reports/CIS/4-bit%20CMOS%20Image%20Sensor.pdf) |
-| 집적회로 설계 | 5-bit CMOS Image Sensor | 4×4 픽셀, 3bit+2bit ADC, 80bit SRAM, 5bit 출력 레지스터 | [회로와 시뮬레이션](reports/CIS/4x4%20CMOS%20Image%20Sensor.md) · [Word](reports/CIS/4x4%20CMOS%20Image%20Sensor.docx) |
+| 집적회로 설계 | 5-bit CMOS Image Sensor | 4×4 픽셀, 3bit+2bit ADC, 80bit SRAM, 5bit 출력 레지스터 | [회로와 시뮬레이션](reports/CIS/4x4%20CMOS%20Image%20Sensor.md) · [PDF](reports/CIS/5-bit%20CMOS%20Image%20Sensor.pdf) |
 | 전자회로 | Network Transfer Function Analysis | KVL·KCL과 임피던스를 이용한 전달함수 유도 및 Cadence 검증 | [PDF](reports/Electronic/Network%20Transfer%20Function%20Analysis.pdf) |
 | 전자회로 | RLC Circuit Analysis | 라플라스 변환·테브난·노턴 정리를 이용한 RLC 회로 해석 | [PDF](reports/Electronic/RLC%20Circuit%20Analysis.pdf) |
 | 전자회로 | Op-Amp and Low-Pass Filter Design | 보드선도 분석, OP-Amp 응용 회로와 저역통과필터 설계 | [PDF](reports/Electronic/Op-Amp%20and%20Low-Pass%20Filter%20Design.pdf) |

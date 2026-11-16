@@ -8,7 +8,7 @@
     {
       "path": "README.md",
       "bytes": 3922,
-      "sha256": "dce0154a00dd5ede2efa1192f20ed30762565b887c33217a616afc033f0da6c8"
+      "sha256": "ae2ca336fa5b137a09f96191892c8c2d09830caaeb2ff2790761a1b86695cf6c"
     },
     {
       "path": "projects/opamp-optimization/.gitignore",
@@ -251,14 +251,14 @@
       "sha256": "b330e21745d34234215059fd1c7ffda4b1310605e1171bb5101732cebab7d1bd"
     },
     {
-      "path": "reports/CIS/4x4 CMOS Image Sensor.docx",
-      "bytes": 1819061,
-      "sha256": "770565b3a1c81628cd4d8f784fd278b726fd318291631440fddf844bc9ebca51"
+      "path": "reports/CIS/4x4 CMOS Image Sensor.md",
+      "bytes": 27031,
+      "sha256": "da261562a8b5b544f3c09a63d16d7fb32ea0dc28589fc8b675c4e0cec9cf498e"
     },
     {
-      "path": "reports/CIS/4x4 CMOS Image Sensor.md",
-      "bytes": 29590,
-      "sha256": "8cf3a92312562f92da3d178c8225574bf23bc034ece0085452321ceef8a9ded2"
+      "path": "reports/CIS/5-bit CMOS Image Sensor.pdf",
+      "bytes": 1992644,
+      "sha256": "97667bc155acbe1f5e88a42351ce954db28b48d236e2c0fd7bf26ef8b2705664"
     },
     {
       "path": "reports/CIS/report_images/image1.png",

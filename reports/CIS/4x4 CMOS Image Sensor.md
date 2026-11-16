@@ -2,7 +2,7 @@
 
 5bit 파이프라인 ADC와 80bit SRAM을 연결한 이미지 센서 회로입니다.
 
-[Word 보고서](4x4%20CMOS%20Image%20Sensor.docx)
+[PDF 보고서 · 결론까지 44쪽](5-bit%20CMOS%20Image%20Sensor.pdf)
 
 ## 설계 개요
 
@@ -590,65 +590,3 @@ Discussion
 16개 픽셀로 32개 입력 전압 수준을 시험하기 위해 LOW와 HIGH를 나누었다. LOW는 0.96~1.56 V에서 00000~01111, HIGH는 1.60~2.20 V에서 10000~11111을 출력하였다. 두 프레임 모두 입력 간격은 0.04 V이다.
 
 검증 범위는 TT 27 °C의 프레임 단위 기능이다. PVT, Noise, Mismatch, PEX, 연속 프레임 재시작, 조밀한 DC 전달 특성 및 SRAM 소자의 스트레스 신뢰성은 추가 검증이 필요하다.
-
-실제 V 마커의 숫자는 저장 노드의 순간 전압이다. 본문의 측정 표는 vss 기준을 사용하며, 평균값은 별도로 표시하였다. 그림의 시간축 범위가 서로 다를 때에는 캡션과 본문에 해당 구간을 명시하였다.
-
-부록 증폭기와 비교기 심볼
-
-LOW·HIGH와 CHIP이 참조하는 스케메틱 134개, 심볼 132개와 물리 뷰 87개를 조사하였다. 흰색 설명 주석 40개를 제거하고, 증폭기·비교기 6개는 삼각형과 +·− 표기로 정리하였다. 심볼의 핀 좌표와 전기적 연결은 유지하였다.
-
-![보고서 그림 54](report_images/image52.png)
-
-증폭기 Symbol  |  HWS_PIPE4_AMP_261106
-
-![보고서 그림 55](report_images/image53.png)
-
-비교기 Symbol  |  HWS_comparator
-
-부록 최하위 논리 회로
-
-상위 블록뿐 아니라 하위 논리 게이트까지 같은 기준으로 확인하였다. 필요한 네트 이름과 소자 파라미터는 남기고, 중복 설명과 불필요한 표시를 정리하였다. 아래는 실제 트랜지스터로 구성한 기본 게이트이다.
-
-![보고서 그림 56](report_images/image54.png)
-
-Inverter Schematic  |  inv_digit
-
-![보고서 그림 57](report_images/image55.png)
-
-NAND2 Schematic  |  nand2_digit
-
-부록 ADC와 MDAC 레이아웃
-
-최상위 CHIP이 실제로 참조하는 압축 배치 뷰를 열었다. 모든 하위 형상을 표시하고 좌표 십자선을 숨겨 캡처하였다. 배치·배선·핀 형상은 기존 LVS 검증본 그대로이다.
-
-![보고서 그림 58](report_images/image56.png)
-
-ADC Layout
-
-![보고서 그림 59](report_images/image57.png)
-
-MDAC Layout
-
-부록 증폭기와 SRAM 배열 레이아웃
-
-증폭기의 트랜지스터 배치와 8×10 SRAM 저장 배열을 확대하였다. 기능 검증용 analogLib RC 코어와 물리 구현용 저항·MIM 셀은 구분하며, 이 캡처 작업에서 소자의 크기나 연결을 변경하지 않았다.
-
-![보고서 그림 60](report_images/image58.png)
-
-증폭기 트랜지스터 Layout  |  L5R_SYS_AMP_TRANS_PHYS_V2
-
-![보고서 그림 61](report_images/image59.png)
-
-80bit SRAM 배열 Layout
-
-부록 최하위 물리 셀
-
-6T SRAM과 Inverter의 실제 하위 레이아웃이다. 최상위부터 하위 셀까지 마스터 참조가 존재함을 확인하였다. 기존 DRC의 Pad·Density 잔여 항목과 PEX·신뢰성 검증의 한계는 본문의 물리 구현 개요와 같다.
-
-![보고서 그림 62](report_images/image60.png)
-
-6T SRAM Layout
-
-![보고서 그림 63](report_images/image61.png)
-
-Inverter Layout  |  L5R_inv_digit
