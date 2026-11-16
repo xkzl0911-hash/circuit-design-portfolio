@@ -1,0 +1,557 @@
+원본: 디지털_3차과제_김의연_전솔빈.pdf
+주의: 자동 추출 텍스트. 수식·그림·읽기 순서는 원본 PDF를 기준으로 확인.
+
+
+===== PAGE 1 =====
+
+디지털회로설계 및 실습 3차과제  
+ 
+ 
+ 
+ 
+    
+ 
+               2021110522 김의연 (100%) 
+2024112882 전솔빈 (0%) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 2 =====
+
+목차 
+I. 서론 
+1)Research Motivation& Research Background 
+II. 본론 
+1)Basic circuit design 
+ -Inverter,NAND,AND,NOR,OR,ETDFF(schematic & simulation & layout) 
+2)Input system 
+-Encoder(schematic & simulation & layout) 
+-Enable signal circuit(schematic & simulation & layout) 
+-Positive edge detector circuit(schematic & simulation & layout) 
+3)Next State Logic(schematic & simulation & layout) 
+4)State Memory(schematic & simulation & layout) 
+5)Output Logic 
+-Counter(schematic & simulation & layout) 
+-AN Generator(schematic & simulation & layout) 
+-7 segment logic(schematic & simulation & layout) 
+-Mux(schematic & simulation & layout) 
+6) I/O PAD 
+7) Comparison of PDA  
+III. 결론  
+1)discussion 
+2)feeling 
+3)question 
+ 
+
+===== PAGE 3 =====
+
+I. 서론 
+1)Research Motivation& Research Background 
+1차 과제에서는 논리 게이트 레벨에서 AFSM을 설계하였고, 2차 과제에서는 LBD, FCD, 
+PLD 설계 기법을 이용해 CMOS 레벨의 Next-State Logic을 구현하였다. 이번 3차 과제에
+서는 Input System, Next-State Logic, State Memory, Output Logic에 대해 LBD, FCD, PLD 
+중 서로 다른 설계 방식을 각각 하나씩 선택하여 설계하고, 여기에 Input Protection 
+Circuit과 Output Driver를 추가하여 전체 Chip을 구현한다. 최종 목표는 
+Power·Delay·Area의 곱인 PDA를 최소화하는 것이다. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+
+II. 본론 
+2021110522 김의연(5input 8State N=4 AFSM) 
+1)Basic circuit design 
+여러가지 기본적인 게이트를 아래와 같이 설계하였다. 
+1)Inverter 
+-Schematic                                -Symbol 
+    
+-Simulation                                                              -Layout 
+   
+Layout의 VDD, VSS, NW, PSD, NSD는 설계하며 한번에 그리도록 하겠다. 
+
+
+===== PAGE 5 =====
+
+2)NAND2 
+-Schematic                                -Symbol 
+   
+-Simulation                                                                              -Layout 
+     
+Layout의 VDD, VSS, NW, PSD, NSD는 설계하며 한번에 그리도록 하겠다. 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+
+3)NOR2 
+-Schematic                                -Symbol 
+  
+   
+-Simulation                                                                      -Layout 
+  
+Layout의 VDD, VSS, NW, PSD, NSD는 설계하며 한번에 그리도록 하겠다. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+
+4)AND2 
+-Schematic                                -Symbol 
+  
+-Simulation                                                                              -Layout 
+  
+Layout의 VDD, VSS, NW, PSD, NSD는 설계하며 한번에 그리도록 하겠다. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+
+5)OR2 
+-Schematic                                              -Symbol 
+  
+-Simulation                                                                        -Layout 
+  
+ Layout의 VDD, VSS, NW, PSD, NSD는 설계하며 한번에 그리도록 하겠다. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 9 =====
+
+6)Edge Triggered D-Flip Flop(FCD) 
+-Schematic                                              -Symbol 
+  
+-Simulation                                                          -Layout  
+  
+ Layout의 VDD, VSS, NW, PSD, NSD는 설계하며 한번에 그리도록 하겠다. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     
+ 
+ 
+
+
+===== PAGE 10 =====
+
+-Total circuit 
+ 
+2)Input system 
+1. Encoder(FCD,LBD혼용) 
+3비트를 2비트로 줄여주는 Encoder를 아래와 같이 설계하였다. 
+Schematic을 먼저 설계 후 단계적으로 Layout을 진행하겠다. 
+-Schematic                                  -Symbol 
+  
+-Simulation 
+
+
+===== PAGE 11 =====
+
+ 
+Encoder가 알맞게 설계되었음을 확인할 수 있다. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 12 =====
+
+2. Enable signal circuit(LBD) 
+이제 Holding이 아닌 입력이 들어오면 High를 출력하는 Enable signal circuit을 설계하겠다. 
+-Schematic                                  -Symbol 
+  
+ -Simulation 
+ 
+Enable signal circuit이 알맞게 설계되었음을 확인할 수 있다. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 13 =====
+
+3)Positive edge detector circuit(FCD,LBD혼용) 
+Holding이 아닌 입력이 들어올 때, CLK의 한 Pulse만큼 high를 출력하는 Positive edge detector 
+circuit을 아래와 같이 설계하였다. 
+-Schematic                                  -Symbol 
+  
+ -Simulation 
+ 
+Positive edge detector circuit이 알맞게 설계되었음을 확인할 수 있다. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 14 =====
+
+2)Next State Logic(FCD) 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 15 =====
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 16 =====
+
+ 
+ 
+-Simulation 
+ 
+ 
+
+
+===== PAGE 17 =====
+
+ 
+ 
+2차과제에서 설계한 NSL도 알맞게 설계되었음을 확인할 수 있다. 
+-Symbol 
+ 
+
+
+===== PAGE 18 =====
+
+3)State Memory(FCD) 
+State Memory는 3개의 비트를 저장하므로 ETDFF로 다음과 같이 설계하였다. 
+-Schematic                          -Symbol 
+  
+-Simulation 
+ 
+3개의 동일한 ETDFF이므로 ETDFF하나의 시뮬레이션으로 검증하였다.  
+ 
+ 
+ 
+ 
+
+
+===== PAGE 19 =====
+
+5)Output Logic 
+1.Counter(FCD) 
+Basys3보드의 단자를 인간의 눈의 연속적으로 출력시키게끔 아래와 같이 Counter를 설계하고 이를 이용해 
+AN단자 생성 AN Generator circuit을 다음과 같이 설계하였다. 
+-Schematic                                             -Symbol 
+ 
+-Simulation 
+ 
+카운터가 정상적으로 동작함을 확인할 수 있다. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 20 =====
+
+2.AN Generator(LBD) 
+적당한 주기를 가진 Q18과 Q19로 AN3 AN2 AN1 AN0중 하나만을 키기위해 AN Generator를 아래와 같이 
+설계하였다. 
+-Schematic                                    -Symbol 
+  
+시뮬레이션은 기본적인 Gate로 설계하였고 위에서 검증했으므로 생략하겠다. 
+ 
+3.7-segment(LBD) 
+AN3 AN2 AN1 AN0의 a,b,c,d,e,f,g의 출력을 결정하는 logic을 다음과 같이 설계하였다. 
+ 
+AN3단자 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 21 =====
+
+ 
+AN2단자 
+ 
+ 
+AN1단자 
+ 
+AN0단자 
+ 
+이제 MUX를 통해 출력단자 a,b,c,d,e,f,g를 결정해주겠다(LBD) 
+-Schematic                          -Symbol 
+   
+
+
+===== PAGE 22 =====
+
+6) I/O PAD 
+1.ESD 
+외부로부터 Chip을 보호해주기 위해 ESD회로를 아래와 같이 설계하였다, 
+ 
+2.Output driver 
+여러 회로들을 거치면서 느려진만큼 출력의 delay를 빠르게하기위해 Output driver를 아래와 같
+이 설계하였다.(8단으로 설계하려 했지만 PAD에 붙어 있는 I/O cell에 버퍼에 맞추기위해 4단만 
+설계하라는 조교님의 말씀이 있었습니다.) 
+-Schematic                                         -Symbol 
+ 
+이로써 모든 회로를 아래와 같이 설계하였다, 
+ 
+
+
+===== PAGE 23 =====
+
+Layout 
+이제 단계적으로 회로를 Layout을 다음과 같이 진행하였다. 
+1.Encoder layout 
+ 
+2.Encoder+en layout 
+ 
+ 
+
+
+===== PAGE 24 =====
+
+3. Encoder+en+ped(Ce)  
+ 
+ 
+4. Encoder+en+ped(Ce)+N2
+ 
+ 
+5. Encoder+en+ped(Ce)+N2+N1 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 25 =====
+
+6. Encoder+en+ped(Ce)+NSL 
+ 
+ 
+7. Encoder+en+ped(Ce)+NSL+SM3 
+ 
+ 
+8. Encoder+en+ped(Ce)+NSL+SM3+counter 
+ 
+ 
+
+
+===== PAGE 26 =====
+
+9. Encoder+en+ped(Ce)+NSL+SM3+counter+AN3
+ 
+10. Encoder+en+ped(Ce)+NSL+SM3+counter+AN3+AN2 
+ 
+11. Encoder+en+ped(Ce)+NSL+SM3+counter+AN3+AN2+AN1 
+ 
+ 
+
+
+===== PAGE 27 =====
+
+12. Encoder+en+ped(Ce)+NSL+SM3+counter+OL 
+ 
+13 Encoder+en+ped(Ce)+NSL+SM3+counter+OL+ESD+Output driver & PAD 
+ 
+분할별로 다음과 같이 표기하였다. 
+ 
+
+
+===== PAGE 28 =====
+
+1.DRC
+ 
+2.LVS 
+ 
+DRC LVS rule에 위반되지않게 layout이 진행됨을 확인할 수 있다.  
+ 
+ 
+ 
+ 
+
+
+===== PAGE 29 =====
+
+7) Comparison of PDA  
+1.Power 
+1주기동안의 평균전류를 아래와 같이 측정하였다. 
+ 
+P=i*V=20.9871m*1.5V=31.48065mW 
+2)Delay 
+입력 X2,X1,X0에대한 출력 A B C D E F G의 출력중 X1에대한 C의 delay가 가장 크며 그 값은 아래와 같다. 
+ 
+Delay:1.9472ns 
+3)Area 
+Full chip의 area는 아래와 같다. 
+ 
+890.168nm*419.685nm=373590.15708nm2 
+-PDA 
+Power  Delay  Area PDA 
+31.48065mW 1.9472ns 373590.15708nm2 2.29007*10-23J*m2 
+ 
+
+
+===== PAGE 30 =====
+
+III. 결론  
+1)discussion 
+이번 과제는 Input System, Next-State Logic, State Memory, Output Logic을 아우르는 전체 Chip
+을 구현하여 최종적으로 Power-Delay Area Product(PDA)를 최소화하는 것을 목표로 수행하였다. 
+이를 위해 기본적인 논리 게이트부터 시작하여 Encoder, Enable Signal Circuit, Positive Edge 
+Detector, Counter, MUX, 7-Segment Logic 등 다양한 서브 블록들을 LBD, FCD 등의 방식을 적절
+히 혼용하여 Schematic으로 설계하고 시뮬레이션을 통해 그 동작을 검증하였다. 특히 Layout 단
+계에서는 전체 회로의 복잡성을 줄이고 배선 오류를 최소화하기 위해, Encoder부터 시작하여 
+Output Driver 및 PAD에 이르기까지 총 13단계로 나누어 순차적으로 블록을 배치하고 확장해 나
+가는 체계적인 접근 방식을 취하였다. 또한, 외부 정전기로부터 칩을 보호하기 위해 입력단에 
+ESD 회로를 추가하였으며, 출력단에는 신호 지연을 개선하기 위한 Output Driver를 설계하였다. 
+이 과정에서 Output Driver는 당초 8단 구성을 고려하였으나, PAD에 포함된 I/O cell 버퍼와의 정
+합성을 맞추기 위해 4단으로 설계하라는 피드백을 반영하여 설계를 수정 및 최적화하였다. 최종
+적으로 완성된 Full Chip Layout에 대해 DRC(Design Rule Check)와 LVS(Layout Versus Schematic) 
+검증을 수행한 결과, 모든 설계 규칙을 준수하고 Schematic과 Layout이 완벽하게 일치함을 확인
+함으로써 설계를 완료하였다. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 31 =====
+
+2)Feeling 
+2021110522 김의연  
+안녕하세요 교수님. 기억하실진 모르겠지만 저는 24년도 2학기에도 디지털회로설계및실습 과목을 수강하였습니다. 저번학
+기에서 나름 열심히 했지만 제 노력이 부족했는지 C+라는 성적을 받게 되었습니다. 성적표를 보니 이번학기의 핵심인 3
+차 과제 레이아웃을 아예 진행하지 않고 1차 2차과제와 기말고사만 응시한 학우분도 저와 같은 성적을 받았던 것을 보고 
+충격이 컸었습니다. 먼저 교수님께서 제가 주신 성적에 불만이 있다고 말하고 싶은 의도는 아님을 먼저 강조드리고 싶습
+니다. 다른 A,B의 성적을 받은 학우분들도 직접 보진 못했지만 얼마나 열심히 과제와 시험에 임했는지 잘 느껴지는 강의
+였습니다. 교수님께서 단순히 성적 순차대로 부여하셨는지 다른 의도가 있으셨는지는 잘 모르겠습니다만 저는 C+라는 학
+점은 재수강이 가능하니 저에게 한번 더 기회를 주신 것이라도 받아들였습니다. 24년 2학기가 끝나고 교수님과 대화해보
+고 싶었고 진로에 대해서도 상담해보고 싶었고, 겨울에 진행하신 세미나도 참석하고 싶었습니다. 회로에 대해 뜻이 있었
+습니다. 하지만 차마 C+라는 성적을 들고서 교수님을 뵐 용기가 나질 않았습니다. 그래서 교수님이 다시 주신 기회 놓치
+고 싶지 않은 마음에 이번학기 디지털회로설계에 제 나름대로 진심을 다했습니다. 지난 학기에보다 조금 더 완벽한 동작
+을 하는 회로를 설계했고 Layout도 최대한 fingering, 겹치는 회로가 있다면 하나 더 만들지 않고 어떻게든 area를 줄여
+보기 위해 노력했고 mos간 거리도 좀 더 줄일 수 있지 않을까, “metal을 여기서 굳이 하나 더 사용해야하나? 원래 내가 
+쓰던 metal을 이용하지 못할까?” 등등 많은 고민도 해보면서 지난학기에 느꼇던 경험과 비교하며 성장했던 시간이었던 
+것 같습니다.  
+ 사실 핑계이면 핑계, 변명이면 변명으로 들리실 수도 있겠습니다만 저는 지금까지 기초전자회로1, 24-2디지털회로설
+계,25-2디지털회로설계에서 레포트의 기여도를 학기내내 50:50으로 진행한 경험이 한번도 없었습니다. 설계를 하는 과정
+속에서 제가 다 고민하고 조원은 제가 생각한 아이디어를 그저 따라하는 구조였습니다. 조원분들은 회로에 대한 열정이 
+없었던 것 같습니다. 저에게 있어서 조별과제는 회로에 대한 집단지성으로 시너지를 내는 것이 아닌 막말로 과제를 추가
+로 도와주고 해줘야하는 모래주머니였습니다. 처음에는 다들 열정이 넘치는 모습을 보여주었지만 점점 연락이 뜸해지고 
+자신의 과제가 어디까지 진행되었는지 말해주지 않더군요…  
+ 화가 났었습니다. 하지만 조원이면 끌고 가야할 것 같았습니다. 조원을 바꾸고, 기여도 숫자가지고 얘기하고 싶지도 않았
+고 저도 잘하는 편은 아닐 순 있어도 제가 아는 영역내에서 개인공부, 휴식시간까지 반납하고 알려주면서 시너지를 내며 
+회로를 최적화하며 이번학기 설계를 마무리하고 싶었습니다. 너무 많은 것을 바란걸까요, 저의 리더쉽이 부족했던 것 일
+까요. 결국 이번 학기도 이렇게 되었습니다. 남탓하고 싶지 않고 핑계고 제 부족이겠지만 이럴 때 마다 자꾸 남탓을 하게 
+되었습니다. 
+특공대원이 아니더라도 고급인력이 아니더라도 돈을 좀 받지 못한다고 해도 그냥 단지 설계분야에 종사하면 제 나름대
+로 만족하면서 살 것 같습니다. 앞으로 아날로그 회로설계, 메모리 회로설계등등 어려운 심화 설계분야가 남아있는데 이
+때의 조원도 이럴까봐 두렵긴합니다만 괜찮습니다. 위는 단지 저와 조원에 대한 느낀점이고 이번학기는 저번학기보다 좀 
+더 나은 회로를 설계하고 완성했다는 것에 의의를 두고 싶습니다.   
+긴 글 읽어주심에 감사합니다. 한학기동안 고생 많으셨습니다. 교수님이 학생을 생각하시는 마음은 저에겐 너무나도 와
+닿았습니다. 좀 더 성장해서 내년 메모리회로설계강의에서 다시 뵙겠습니다.  
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 32 =====
+
+3)Question 
+1.내가 만든 회로는 여러가지의 방법중 어느 설계방식의 PDA가 가장 적었을까. 
+2.나의 회로를 전문가가 레이아웃하면 어떤 레이아웃이 나올까. 
+3.내년에 배울 SRAM DRAM의 메모리회로는 지금의 ETDFF와 어떤 점이 다르고 어떻게 동작하며 내 회로에 
+적용시켜 볼 수 있다면 어떻게 적용할 수 있을까. 
+ 

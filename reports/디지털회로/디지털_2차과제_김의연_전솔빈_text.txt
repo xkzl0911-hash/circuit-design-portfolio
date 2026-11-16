@@ -1,0 +1,671 @@
+원본: 디지털_2차과제_김의연_전솔빈.pdf
+주의: 자동 추출 텍스트. 수식·그림·읽기 순서는 원본 PDF를 기준으로 확인.
+
+
+===== PAGE 1 =====
+
+디지털회로설계 및 실습 2차과제  
+ 
+ 
+ 
+ 
+    
+ 
+            2021110522 김의연 (50%) 
+2024112882 전솔빈 (50%) 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 2 =====
+
+목차 
+I. 서론 
+1)Research Motivation& Research Background 
+ 
+II. 본론 
+1)Library Based design 
+2)Full custom design 
+3)Pass transistor Logic design 
+4) Comparison of Design Methods 
+ 
+III. 결론  
+1)discussion 
+2)feeling 
+3)question 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+
+I. 서론 
+1)Research Motivation& Research Background 
+지난 1차과제에서 AFSM을 베릴로그로 설계하였다. 이번 2차과제에서는 CMOS Level로 
+nmos와 pmos를 활용하여 물리적인 소자들로 AFSM의 Next State Logic을 설계하였다. 
+3가지의 디지털회로설계방식으로(LBD,FCD,PLD) NSL을 모두 설계하여 어떤 방식의 설계
+가 Power,delay,area면에서 좋은 지 확인하려한다.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+
+II. 본론 
+1)Library Based design 
+LBD는 기본적인 Logic gate를 이용한 설계이다. 이번 과제에서는 NAND, NOR의 2, 3, 4 
+input을 설계 후 inverter를 연결해 AND, OR gate로 설계하는 방식을 택했다. 
+각 출력비트의 논리식은 다음과 같다. 
+N2 = ~I2 & ~I3 & (C1 | C2) & (C2 | ~P2) & (C2 | I1 | P1) & (~I0 | ~I1) & (C2 | P1 | ~C0) 
+& (P0 | P2 | ~C0) & (P1 | P2 | ~C2) & (C0 | ~C1 | ~P1) & (C0 | C1 | P1 | ~P0) & (I0 | I1 | 
+P2 | ~C1) & (~P0 | ~P1 | ~P2) & (P0 | P1 | ~C0 | ~C1) & (~C0 | ~C1 | ~C2 | ~I0) & (~C0 
+| ~C1 | ~C2 | ~I1) 
+N2를 LBD로 Cadence로 설계하였다 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+
+N1 = ~I2 & ~I3 & (C0 | C1 | I1) & (C1 | I0 | I1) & (~I0 | ~I1) & (C0 | I1 | ~C2) & (C2 | P0 | 
+~P2) & (P1 | P2 | ~C2) & (C2 | ~C1 | ~P2) & (P2 | ~C1 | ~C2) & (C0 | C1 | P1 | ~P0) & 
+(C0 | C2 | P2 | ~P1) & (C1 | C2 | P1 | ~P0) & (~C1 | ~I0 | ~P2) & (C0 | C2 | ~C1 | ~I1) & 
+(C0 | P0 | ~C1 | ~C2) & (P0 | P1 | ~C0 | ~C1) & (C1 | P0 | P2 | ~C0 | ~P1) & (~C0 | ~C1 | 
+~I1 | ~P2) & (~C2 | ~P0 | ~P1 | ~P2) & (C2 | P2 | ~I0 | ~P0 | ~P1) & (C2 | P2 | ~I1 | ~P0 
+| ~P1) 
+N1을 LBD로 아래와 같이 Cadence로 설계하였다. 
+   
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+
+N0 = ~I2 & ~I3 & (C0 | C1 | I0) & (C0 | C2 | I0) & (~I0 | ~I1) & (C2 | P0 | ~P2) & (C2 | 
+P1 | ~P2) & (P1 | P2 | ~C2) & (C2 | ~C1 | ~P2) & (P2 | ~C1 | ~C2) & (C0 | C1 | P1 | ~P0) 
+& (C0 | C2 | P2 | ~P1) & (C1 | C2 | P2 | ~P0) & (~C0 | ~I0 | ~P2) & (C0 | P0 | ~C1 | ~C2) 
+& (P0 | P1 | ~C0 | ~C1) & (P0 | P1 | ~C0 | ~I0) & (C1 | P0 | P2 | ~C0 | ~P1) & (~C0 | ~I0 
+| ~P0 | ~P1) & (~C2 | ~P0 | ~P1 | ~P2) 
+N0를 LBD로 아래와 같이 Cadence로 설계하였다. 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+
+-Simulation 
+입력 I3 I2 I1 I0 C2 C1 C0 P2 P1 P0에 대한 출력 N2 N1 N0의 Simulation은 아래와 같다. 
+ 
+I3의 값은 항상 LOW이며 I2는 리셋신호로 High이면 모두 low로 reset되는상황을 보여주
+며 시뮬레이션의 값과 우리가 구한 logic equation, schmatic이 일치함을 확인할 수 있다. 
+ 
+-Power 
+I3의 값은 항상 LOW이므로 I2기준 한 주기의 평균 전류를 구하면 다음과 같다. 
+ 
+P=I*V이고 V=1.5V이므로 LBD의 Power는 295.584uW이다. 
+
+
+===== PAGE 8 =====
+
+-Delay 
+입력 I3 I2 I1 I0 C2 C1 C0 P2 P1 P0에 대한 출력 N2 N1 N0에 대한 각각의 rising, falling 
+delay 3*10*2=60가지 경우의 delay를 위 시뮬레이션에서 측정한 결과  
+ 
+N1에 대한 I1의 rising delay가 543.69751ps로 가장 크기에 delay는 543.69751ps이다. 
+ 
+-Area 
+Layout이 진행되지 않아 chip의 area를 비교할 수 없으므로 사용한 transistor 개수로 
+area를 구해보자 총 490개의 transistor를 사용하였다.  
+ 
+정리하면 다음과 같다. 
+Design methods Power Delay Area PDA[uW*ps] 
+LBD 295.584uW 543.69751ps 490 78747053.55 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 9 =====
+
+2)Full custom design 
+Full custom design은 Pull up network, Pull down network로 구성되어있다.  
+Pull up network는 pmos로 and는 병렬, or는 직렬로 구성하고  
+Pull down network는 nmos로 and는 직렬,or는 병렬로 구성된다.  
+각 출력비트의 논리식은 다음과 같다. 
+N2 = ~I2 & ~I3 & (C1 | C2) & (C2 | ~P2) & (C2 | I1 | P1) & (~I0 | ~I1) & (C2 | P1 | ~C0) 
+& (P0 | P2 | ~C0) & (P1 | P2 | ~C2) & (C0 | ~C1 | ~P1) & (C0 | C1 | P1 | ~P0) & (I0 | I1 | 
+P2 | ~C1) & (~P0 | ~P1 | ~P2) & (P0 | P1 | ~C0 | ~C1) & (~C0 | ~C1 | ~C2 | ~I0) & (~C0 
+| ~C1 | ~C2 | ~I1) 
+ 
+N2를 FCD로 아래와 같이 Cadence로 설계하였다. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 10 =====
+
+N1 = ~I2 & ~I3 & (C0 | C1 | I1) & (C1 | I0 | I1) & (~I0 | ~I1) & (C0 | I1 | ~C2) & (C2 | P0 | 
+~P2) & (P1 | P2 | ~C2) & (C2 | ~C1 | ~P2) & (P2 | ~C1 | ~C2) & (C0 | C1 | P1 | ~P0) & 
+(C0 | C2 | P2 | ~P1) & (C1 | C2 | P1 | ~P0) & (~C1 | ~I0 | ~P2) & (C0 | C2 | ~C1 | ~I1) & 
+(C0 | P0 | ~C1 | ~C2) & (P0 | P1 | ~C0 | ~C1) & (C1 | P0 | P2 | ~C0 | ~P1) & (~C0 | ~C1 | 
+~I1 | ~P2) & (~C2 | ~P0 | ~P1 | ~P2) & (C2 | P2 | ~I0 | ~P0 | ~P1) & (C2 | P2 | ~I1 | ~P0 
+| ~P1) 
+N1을 FCD로 아래와 같이 Cadence로 설계하였다. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 11 =====
+
+N0 = ~I2 & ~I3 & (C0 | C1 | I0) & (C0 | C2 | I0) & (~I0 | ~I1) & (C2 | P0 | ~P2) & (C2 | 
+P1 | ~P2) & (P1 | P2 | ~C2) & (C2 | ~C1 | ~P2) & (P2 | ~C1 | ~C2) & (C0 | C1 | P1 | ~P0) 
+& (C0 | C2 | P2 | ~P1) & (C1 | C2 | P2 | ~P0) & (~C0 | ~I0 | ~P2) & (C0 | P0 | ~C1 | ~C2) 
+& (P0 | P1 | ~C0 | ~C1) & (P0 | P1 | ~C0 | ~I0) & (C1 | P0 | P2 | ~C0 | ~P1) & (~C0 | ~I0 
+| ~P0 | ~P1) & (~C2 | ~P0 | ~P1 | ~P2) 
+N0를 FCD로 아래와 같이 Cadence로 설계하였다. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 12 =====
+
+-Simulation 
+입력 I3 I2 I1 I0 C2 C1 C0 P2 P1 P0에 대한 출력 N2 N1 N0의 Simulation은 아래와 같다. 
+ 
+I3의 값은 항상 LOW이며 I2는 리셋신호로 High이면 모두 low로 reset되는상황을 보여주
+며 시뮬레이션의 값과 우리가 구한 logic equation, schmatic이 일치함을 확인할 수 있다. 
+ 
+-Power 
+I3의 값은 항상 LOW이므로 I2기준 한 주기의 평균 전류를 구하면 다음과 같다. 
+ 
+P=I*V이고 V=1.5V이므로 FCD의 Power는 85.27545uW이다. 
+ 
+ 
+ 
+
+
+===== PAGE 13 =====
+
+-Delay 
+입력 I3 I2 I1 I0 C2 C1 C0 P2 P1 P0에 대한 출력 N2 N1 N0에 대한 각각의 rising,falling 
+delay 3*10*2=60가지 경우의 delay를 위 시뮬레이션에서 측정한 결과  
+ 
+N0에 대한 P0의 rising delay가 617.21842ps로 가장 크기에 delay는 617.21842ps이다. 
+ 
+-Area 
+Layout이 진행되지 않아 chip의 area를 비교할 수 없으므로 사용한 transistor 개수로 
+area를 계산한결과 170개의 transistor를 사용하였다.  
+ 
+정리하면 다음과 같다. 
+Design methods Power Delay Area PDA[uW*ps] 
+FCD 85.27545uW 617.21842ps 170 8947708.347 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 14 =====
+
+3)Pass transistor Logic design 
+1차과제에서 설계한 AFSM의 NSL의 Truth table은 아래와 같다. 
+ 
+ 
+ 
+
+
+===== PAGE 15 =====
+
+N2b,N1b,N0b에 대해 Binary Decision Diagram(BDD)를 그리고 각 edge와 node를 간
+략화하면 다음과 같다. 
+N2b 
+ 
+N1b 
+ 
+N0b 
+ 
+ 
+
+
+===== PAGE 16 =====
+
+위의 BDD를 통해서 N2,N1,N0의 Schmatic을 아래와 같이 설계하였다.  
+N2 
+각 소자를 확대하면 다음과 같다. 
+ 
+ 
+ 
+
+
+===== PAGE 17 =====
+
+N1 
+ 
+소자들을 확대하면 다음과 같이 나타나진다. 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 18 =====
+
+N0 
+ 
+각 소자들을 확대하면 다음과 같다.  
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 19 =====
+
+-Simulation(조원과 분할하여 설계하여 각각의 시뮬레이션으로 결과를 확인하겠다.) 
+입력 I3 I2 I1 I0 C2 C1 C0 P2 P1 P0에 대한 출력 N2, N1의 Simulation은 아래와 같다. 
+ 
+ 
+ 
+
+
+===== PAGE 20 =====
+
+입력 I3 I2 I1 I0 C2 C1 C0 P2 P1 P0에 대한 출력 N0의 Simulation은 아래와 같다. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 21 =====
+
+-N2, N1’s Power 
+I3의 값은 항상 LOW이므로 I2기준 한 주기의 평균 전류를 구하면 다음과 같다. 
+ 
+P=I*V=4.4541*1.5V=6.6812mV이다. 
+-N0’s Power 
+I3의 값은 항상 LOW이므로 I2기준 한 주기의 평균 전류를 구하면 다음과 같다. 
+ 
+P=I*V=1.90732mA*1.5V=2.86098mV이다. 
+ 
+ 
+ 
+
+
+===== PAGE 22 =====
+
+-Delay 
+입력 I3 I2 I1 I0 C2 C1 C0 P2 P1 P0에 대한 출력 N2, N1에 대한 각각의 rising,falling 
+delay 10*4=40가지 경우의 delay를 위 시뮬레이션에서 측정한 결과  
+ 
+N1에 대한 P0의 rising delay가 3.14583ns로 가장 크기에 delay는 3.14583ns이다. 
+입력 I3 I2 I1 I0 C2 C1 C0 P2 P1 P0에 대한 출력 N0에 대한 각각의 rising,falling delay 
+10*2=20가지 경우의 delay를 위 시뮬레이션에서 측정한 결과  
+ 
+N0에 대한 P2의 rising delay가 8.368978ns로 가장 크기에 delay는 8.368978ns이다. 
+ 
+ 
+
+
+===== PAGE 23 =====
+
+-N2, N1’s Area 
+Layout이 진행되지 않아 chip의 area를 비교할 수 없으므로 사용한 transistor 개수로 
+area를 계산한결과 N2, N1에는 251개의 transistor를 사용하였다. 
+ 
+-N0’s Area 
+Layout이 진행되지 않아 chip의 area를 비교할 수 없으므로 사용한 transistor 개수로 
+area를 계산한결과 N0에는 170개의 transistor를 사용하였다. 
+ 
+따라서 N2, N1, N0를 전부 합한 PLD의 PDA를 정리하면 다음과 같다. 
+ 
+Design methods Power Delay Area PDA[mw*ns] 
+PLD 9.54213mW 8.36898ns 421 33620.17385 
+ 
+4) Comparison of Design Methods 
+다음과 같이 모든 설계방식의 PDA를 정리하였다. 
+Design methods Power  Delay Area PDA[uW*ps] 
+LBD 295.584uW 543.69751ps 490 78747053.55 
+FCD 85.27545uW 617.21842ps 170 8947708.347 
+PLD 9542.13uW 8368980ps 421 3.1783442261*1013 
+ 
+LBD를 1로 기준으로 한 상댓값은 다음과 같다. 
+Design methods Power  Delay Area PDA[uW*ps] 
+LBD 1 1 1 1 
+FCD 0.2885 1.1352 0.3469 0.1136 
+PLD 32.2824 15392.60 0.85 403610.7 
+ 
+NSL을 FCD방식으로 설계한 방법이 가장 PDA면에서 효율적임을 확인할 수 있다.  
+ 
+
+===== PAGE 24 =====
+
+Additional design(상대평가:5Input 8State N=4 Circuit) 
+1)Library Based design 
+각 출력비트의 논리식은 다음과 같다. 
+N2 = (~C2  &  ~P2  &  ~W2  &  (C0  |  C1)  &  (I0  |  I1)  &  (P0  |  P1)  &   (W0  |  W1))  
+N2를 LBD로 아래와 같이 Cadence로 설계하였다. 
+ 
+N1 = (~C2  &  ~P2  &  ~W2  &  (C1  |  I0  |  I1)  &  (C0  |  C1  |  ~P0)  &  (C0  |  C1  |  ~P1)  
+&  (P0  |  P1  |  ~W0)  &  (P0  |  P1  |  ~W1)  &  (I1  |  W0  |  W1  |  ~I0)  &  (C0  |  I1  |  P0  
+|  W0  |  ~I0)  &  (C1  |  I0  |  P0  |  W0  |  ~W1)  &  (C0  |  I0  |  P0  |  W1  |  ~I1  |  ~W0)  
+&  (C0  |  I0  |  P1  |  W0  |  ~I1  |  ~W1)  &  (C1  |  ~I0  |  ~I1  |  ~P0  |  ~P1  |  ~W0  |  
+~W1)  &  (P1  |  ~C0  |  ~C1  |  ~I0  |  ~I1  |  ~W0  |  ~W1)  &  (I1  |  ~C0  |  ~C1  |  ~I0  |  
+~P0  |  ~P1  |  ~W 0  |  ~W1)  &  (W1  |  ~C0  |  ~C1  |  ~I0  |  ~I1  |  ~P0  |  ~P1  |  ~W0))  
+N1를 LBD로 아래와 같이 Cadence로 설계하였다. 
+ 
+
+
+===== PAGE 25 =====
+
+ 
+ 
+ 
+N0 = (~C2  &  ~P2  &  ~W2  &  (C0  |  I0  |  I1)  &  (C0  |  C1  |  ~P0)  &  (C0  |  C1  |  ~P1)  
+&  (P0  |  P1  |  ~W0)  &  (P0  |  P1  |  ~W1)  &  (C0  |  I0  |  P0  |  W1)  &  (C0  |  I0  |  P1  
+|  W0)  &  (C0  |  I0  |  P1  |  W1)  &  (I0  |  W0  |  W1   |  ~I1)  &  (C0  |  I1  |  P0  |  W0  |  
+~W1)  &  (C0  |  I1  |  P0  |  W1  |  ~W0)  &  (C0  |  I1  |  P1  |  W0  |  ~W1)  &  (C1  |  I0  |  
+P0  |  W0  |  ~I1)  &  (C1  |  I0  |  P0  |  W1  |  ~I1)  &  (C1  |  I0  |  P1  |  W0  |  ~I1)  &  
+(C1  |  I1  |  P0  |  W0  |  ~I0  |  ~W1))  
+N0를 FCD로 아래와 같이 Cadence로 설계하였다. 
+
+
+===== PAGE 26 =====
+
+ 
+ 
+-Simulation 
+입력 I1 I0 C2 C1 C0 P2 P1 P0 W2 W1 W0에 대한 출력 N2 N1 N0의 Simulation은 아래와 같다. 
+ 
+
+
+===== PAGE 27 =====
+
+ 
+ 
+-Power 
+ 
+P=I*V이고 V=1.5V이므로 LBD의 Power는 78.0474uW이다. 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 28 =====
+
+-Delay 
+입력 I1 I0 C2 C1 C0 P2 P1 P0 W2 W1 W0에 대한 출력 N2 N1 N0에 대한 각각의 rising, 
+falling delay 3*11*2=66가지 경우의 delay를 위 시뮬레이션에서 측정한 결과  
+ 
+N0에 대한 W0의 falling delay가 416.23048ps로 가장 크기에 delay는 416.23048ps이다. 
+-Area 
+Layout이 진행되지 않아 chip의 area를 비교할 수 없으므로 사용한 transistor 개수로 
+area를 계산한결과 486개의 transistor를 사용하였다.  
+ 
+정리하면 PDA는 다음과 같다. 
+Design methods Power Delay Area PDA[uW*ps] 
+LBD 78.0474uw 416.23048ps 486 15788053.4877 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 29 =====
+
+2)Full custom design 
+각 출력비트의 논리식은 다음과 같다. 
+N2 = (~C2  &  ~P2  &  ~W2  &  (C0  |  C1)  &  (I0  |  I1 )  &  (P0  |  P1)  &  (W0  |  W1))  
+N2를 FCD로 아래와 같이 Cadence로 설계하였다. 
+ 
+ 
+N1 = (~C2  &  ~P2  &  ~W2  &  (C1  |  I0  |  I1)  &  (C0  |  C1  |  ~P0)  &  (C0  |  C1  |  ~P1)  
+&  (P0  |  P1  |  ~W0)  &  (P0  |  P1  |  ~W1)  &  (I1  |  W0  |  W1  |  ~I0)  &  (C0  |  I1  |  P0  
+|  W0  |  ~I0)  &  (C1  |  I0  |  P0  |  W0  |  ~W1)  &  (C0  |  I0  |  P0  |  W1  |  ~I1  |  ~W0)  
+&  (C0  |  I0  |  P1  |  W0  |  ~I1  |  ~W1)  &  (C1  |  ~I0  |  ~I1  |  ~P0  |  ~P1  |  ~W0  |  
+~W1)  &  (P1  |  ~C0  |  ~C1  |  ~I0  |  ~I1  |  ~W0  |  ~W1)  &  (I1  |  ~C0  |  ~C1  |  ~I0  |  
+~P0  |  ~P1  |  ~W 0  |  ~W1)  &  (W1  |  ~C0  |  ~C1  |  ~I0  |  ~I1  |  ~P0  |  ~P1  |  ~W0))  
+N1를 FCD로 아래와 같이 Cadence로 설계하였다. 
+ 
+ 
+
+
+===== PAGE 30 =====
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 31 =====
+
+N0 = (~C2  &  ~P2  &  ~W2  &  (C0  |  I0  |  I1)  &  (C0  |  C1  |  ~P0)  &  (C0  |  C1  |  ~P1)  
+&  (P0  |  P1  |  ~W0)  &  (P0  |  P1  |  ~W1)  &  (C0  |  I0  |  P0  |  W1)  &  (C0  |  I0  |  P1  
+|  W0)  &  (C0  |  I0  |  P1  |  W1)  &  (I0  |  W0  |  W1   |  ~I1)  &  (C0  |  I1  |  P0  |  W0  |  
+~W1)  &  (C0  |  I1  |  P0  |  W1  |  ~W0)  &  (C0  |  I1  |  P1  |  W0  |  ~W1)  &  (C1  |  I0  |  
+P0  |  W0  |  ~I1)  &  (C1  |  I0  |  P0  |  W1  |  ~I1)  &  (C1  |  I0  |  P1  |  W0  |  ~I1)  &  
+(C1  |  I1  |  P0  |  W0  |  ~I0  |  ~W1))  
+N0를 FCD로 아래와 같이 Cadence로 설계하였다. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 32 =====
+
+-Simulation 
+입력 I1 I0 C2 C1 C0 P2 P1 P0 W2 W1 W0에 대한 출력 N2 N1 N0의 Simulation은 아래와 같다. 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 33 =====
+
+-Power 
+ 
+P=I*V이고 V=1.5V이므로 FCD의 Power는 79.4319mW이다. 
+-Delay 
+입력 I1 I0 C2 C1 C0 P2 P1 P0 W2 W1 W0에 대한 출력 N2 N1 N0에 대한 각각의 
+rising,falling delay 3*11*2=66가지 경우의 delay를 위 시뮬레이션에서 측정한 결과  
+ 
+N1에 대한 W0의 rising delay가 403.128719ps로 가장 크기에 delay는 403.128719ps이다. 
+-Area 
+Layout이 진행되지 않아 chip의 area를 비교할 수 없으므로 사용한 transistor 개수로 
+area를 계산한결과 552개의 transistor를 사용하였다.  
+Design methods Power Delay Area PDA[uW*ps] 
+FCD 79.4319uW 403.128719ps 552 17675746.61 
+ 
+ 
+ 
+
+
+===== PAGE 34 =====
+
+3) Comparison of Design Methods 
+다음과 같이 모든 설계방식의 PDA를 정리하였다. 
+Design methods Power  Delay Area PDA[uW*ps] 
+LBD 78.0474uW 416.23048ps 486 15788053.4877 
+FCD 79.4319uW 403.128719ps 552 17675746.61 
+ 
+LBD를 1로 기준으로 한 상댓값은 다음과 같다. 
+Design methods Power  Delay Area PDA[uW*ps] 
+LBD 1 1 1 1 
+FCD 1.0177 0.9685 1.1358 1.1196 
+ 
+NSL을 LBD방식과 FCD방식중 LBD방식으로 설계한 방법이 PDA면에서 효율적임을 확인
+할 수 있다.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 35 =====
+
+III. 결론  
+1)discussion 
+이번 2차 과제에서는 AFSM의 Next State Logic(NSL)을 CMOS Level에서 세 가지 다른 
+설계 방식(LBD, FCD, PLD)으로 구현하고, 각 방식의 Power, Delay, Area 성능을 종합적으
+로 평가하는 PDA 지표를 통해 효율성을 비교 분석하였다. 
+절대평가에선, NSL을 FCD 방식으로 설계했을 때 PDA 값이 LBD의 약 11.4% 수준으로 
+가장 효율적임을 확인할 수 있었다. FCD는 비록 Delay 측면에서는 LBD보다 소폭 느렸으
+나, Power 소모가 LBD의 28.9%에 불과하고 사용된 트랜지스터 개수(Area)는 34.7% 수준
+으로 현저히 적어 전체적인 효율성에서 압도적인 우위를 보였다. 반면 PLD 방식은 Delay
+가 LBD 대비 15,000배 이상으로 측정되는 등 모든 면에서 비효율적인 결과를 보였다. 
+하지만 이어진 상대평가에서는 다른 결과가 도출되었다. 더 복잡한 논리식을 가진 이 회
+로에서는 LBD 방식이 FCD 방식보다 PDA 측면에서 약 12% 더 효율적인 것으로 나타났
+다. FCD는 논리식이 복잡해지면서 Pull-up/Pull-down 네트워크에 직렬로 연결되는 트랜
+지스터의 수가 증가하여 오히려 Power와 Area가 LBD보다 증가하였고, 이는 전체적인 
+PDA 효율 저하로 이어졌다. 
+두  결과를 종합하면, '어떤 설계 방식이 항상 절대적으로 우월한 것은 아니며, 회로의 논
+리적 복잡도에 따라 최적의 설계 방식이 달라질 수 있다'는 중요한 결론을 얻을 수 있다. 
+비교적 간단한 논리에서는 FCD가 우수했지만, 복잡성이 증가하는 특정 지점부터는 표준
+화된 게이트를 사용하는 LBD가 더 나은 선택이 될 수 있음을 확인했다. 따라서 실제 회
+로 설계 시에는 목표 성능과 회로의 특성을 모두 고려하여 가장 적합한 설계 방식을 채
+택하는 것이 중요하다. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 36 =====
+
+2)Feeling 
+김의연 
+이번 과제를 통해 디지털 회로 설계를 이론으로만 배우는 것과 실제 CMOS 레벨에서 물리적으로 구현하는 
+것의 차이를 체감할 수 있었다. 특히 동일한 논리식을 여러 방식으로 설계하며 Power, Delay, Area 관계를 
+직접 눈으로 확인한 경험은 매우 의미 있었다. 수업시간에 배운 내용과 실습 때 했던 경험을 통해 1차과제
+때 설계한 회로를 구현하는 것은 별 문제없었으나, 처음보는 회로 특히 입출력이 꼬아지거나 Drain과 
+Source부분이 시간에 따라 변하는 회로를 분석하는 법은 아직 익숙하지 않아 어려움을 겪었다. 그리고 PLD
+방식으로 설계함에 있어서 수업시간에 delay가 클 것이라고 교수님이 언급하셔서 이미 어느정도 예상은 하
+고 있었으나 다른 방식과 너무 차이가 커 당황했다. tree구조의 수많은 직렬연결로 인한 것인지 아니면 
+nmos의 sizing을 좀 더 조절했어야 하는 것인지는 아직 잘 모르겠다. 설계하며 느낀 것지만 설계방식에서의 
+차이도 존재하지만 같은 설계방식내에서도 사람마다 다른 효율을 내는 회로를 설계할 수 있을 것 같다는 생
+각이 들었다. 어떠한 논리식이 중복되면 그것을 다 만드는 것이 아닌 하나의 term으로 계산하여 놓은 뒤 중
+복되는 자리마다 넣어주거나 sizing을 효율적으로 하거나 등등 이로 인해 발생하는 회로의 효율도 달라질 것 
+같았다. 결론은 내었지만 여기서 만일 다른 사람이 나의 회로를 설계하여 비교해본다면 그 결과는 또 달라
+질 수도 있을 것 같았다. 3차과제에서는 최대한 sizing을 작게하고 중복되는 단위는 하나만 만들어 여러 입
+력으로 넣어주는 식으로 PDA를 최소화해보려한다.  
+ 
+전솔빈 
+2차과제를 할 때에는 1차과제보다는 조금 수월하게 할 수 있었던 것 같다. LBD를 제작하는 과정에서 식에 
+문제는 없었지만 schematic으로 옮기는 과정에서 사소한 오류들이 많이 발생하여 그런 오류를 고치는 과정
+이 조금 오래걸렸다. 그리고 절대평가 과제를 완료하고 추가과제를 할 때에는 한번 해본 과정이여서 생각보
+다 금방 쉽게 끝낼 수 있었다. 2차 과제를 시작할 당시에는 LBD PLD의 구조가 익숙하지 않아서 개념부터 이
+해를 했었다. 그래도 금방 이해할 수 있었다. 
+하지만 3차 과제의 layout을 설계하는 과제가 걱정된다. 첫 실습을 들었을때는 수업 진도를 따라가기에 바빴
+고 제대로 이해하지 못했기에 3차과제를 잘 해낼 수 있을지에 대해서 걱정이 앞선다. 하지만 지금까지 과제
+들을 해온 것처럼 수업 시간에 배우는 것과 이해를 잘 한다면 layout도 금방 쉽게 할 수 있을 것이라고 생
+각한다. 
+이번 과제로 반도체 설계라는 것에 조금 더 가까워졌다고 생각한다. 아직 실제 회사에 들어가서 하는것에는 
+미치지 못하겠지만 언젠가는 이것들보다 더 복잡한 것도 해낼 수 있을 거라고 생각한다. 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 37 =====
+
+3)Question 
+1.출력전압의 노이즈를 제거하기위해 버퍼를 사용했는데, 버퍼로 인해 delay가 커지는 현
+상이 발생한다. 노이즈가 어느정도여야 버퍼를 사용할지 말지를 결정하는 기준이 궁금하
+다. 만약 버퍼를 사용하지 않는 방법이 있다면 그 방법에 대해 궁금하다.  
+ 
+ 
