@@ -14,8 +14,8 @@ CIS의 기능 검증은 TT 조건의 결과입니다. PVT·노이즈·미스매�
 
 ## CIS 회로설계 보고서
 
-- [LOW/HIGH 보고서 본문과 회로 그림](reports/CIS/KIM_SS2_%ED%9A%8C%EB%A1%9C%EC%84%A4%EA%B3%84_%EB%B3%B4%EA%B3%A0%EC%84%9C_LOW_HIGH.md)
-- [원본 Word 보고서 다운로드](reports/CIS/KIM_SS2_%ED%9A%8C%EB%A1%9C%EC%84%A4%EA%B3%84_%EB%B3%B4%EA%B3%A0%EC%84%9C_LOW_HIGH.docx)
+- [LOW/HIGH 보고서 본문과 회로 그림](reports/CIS5/KIM_SS2_%ED%9A%8C%EB%A1%9C%EC%84%A4%EA%B3%84_%EB%B3%B4%EA%B3%A0%EC%84%9C_LOW_HIGH.md)
+- [원본 Word 보고서 다운로드](reports/CIS5/KIM_SS2_%ED%9A%8C%EB%A1%9C%EC%84%A4%EA%B3%84_%EB%B3%B4%EA%B3%A0%EC%84%9C_LOW_HIGH.docx)
 
 ## 디지털·아날로그·메모리 과제
 
