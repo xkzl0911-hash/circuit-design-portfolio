@@ -1,0 +1,200 @@
+{
+  "params": {
+    "W12": 9.624227115596909e-05,
+    "W5": 8.033605146042571e-05,
+    "W6": 9.13546793260821e-05,
+    "W7": 3.0397949244685457e-05,
+    "W8": 1.3700453756774914e-05,
+    "W9": 9.171154123295322e-05,
+    "W10": 9.28727099934021e-05,
+    "W34": 2.4339590807377547e-05,
+    "RZERO": 1082.5837929537033,
+    "CCOMP": 3.708248013644138e-12
+  },
+  "metrics": {
+    "gain_reference_frequency_hz": 0.01,
+    "low_frequency_gain_db": 78.59408030516556,
+    "low_frequency_phase_deg": -9.424694186331863e-05,
+    "gain_change_first_decade_db": -1.1632153018581448e-09,
+    "power_mw": 3.566766899215657,
+    "supply_current_ua": 1080.838454307775,
+    "f_unity_hz": 44964174.97950218,
+    "phase_margin_unity_feedback_estimate_deg": 73.0527191928014,
+    "all_falling_unity_crossings": [
+      {
+        "frequency_hz": 44964174.97950218,
+        "phase_margin_deg": 73.0527191928014
+      }
+    ],
+    "f_3db_open_loop_hz": 6064.922151996187,
+    "dc_voltages_v": {
+      "vdda": 3.3,
+      "vbp": 1.9491673717859277,
+      "vbn": 0.8298691624896231,
+      "vx": 2.9380172342569875,
+      "vo1": 1.1014794187635364,
+      "vout": 1.6500003156037337
+    },
+    "measurement_notes": [
+      "TT, 25C, 3.3V, CL=10pF. VIN2=plus, VIN1=minus.",
+      "PM is an estimate for unity negative feedback, not all closed-loop gains.",
+      "SR is the 20%-80% average slope of a unity-follower 1V<->2V step.",
+      "ICMR: output servo at 1.65V; small DC output perturbation estimates gain.",
+      "OCMR: output servo sweep at input common-mode 1.65V; local DC gain >=60dB.",
+      "Ranges are sampled in 0.05V steps. Servo error <=1mV, |input difference|<=10mV.",
+      "DC balance tolerance=1mV is an engineering screening assumption; ideal target is zero.",
+      "MOS saturation uses rounded Vdsat values from the model operating-point log."
+    ],
+    "saturation_headroom_v": {
+      "M3": 0.8,
+      "M4": 0.8,
+      "M7": 1.3499999999999999,
+      "M9": 1.0030000000000001,
+      "M10": 0.722,
+      "M1": 1.585,
+      "M2": 1.585,
+      "M5": -0.027000000000000024,
+      "M6": 1.261,
+      "M8": 0.9610000000000001
+    },
+    "rz_one_over_gm7_reference_ohm": 358.4229390681004,
+    "slew_rate_rise_v_per_us": 37.40339011472512,
+    "slew_rate_fall_v_per_us": 116.23785285348058,
+    "slew_settled": true,
+    "icmr_v": [
+      0.05,
+      2.1
+    ],
+    "ocmr_v": [
+      0.4,
+      2.9000000000000004
+    ]
+  },
+  "elapsed_s": 7.907000000006519,
+  "folder": "PROJECT_ROOT\\runs\\opt_20261020_224847_a135\\trials\\0094",
+  "checks": [
+    {
+      "name": "Power",
+      "value": 3.566766899215657,
+      "target": 10.0,
+      "violation": -0.6433233100784344,
+      "unit": "mW",
+      "status": "pass"
+    },
+    {
+      "name": "DC gain",
+      "value": 78.59408030516556,
+      "target": 60.0,
+      "violation": -0.309901328419426,
+      "unit": "dB",
+      "status": "pass"
+    },
+    {
+      "name": "Unity gain",
+      "value": 44964174.97950218,
+      "target": 1000000.0,
+      "violation": -43.96417496950218,
+      "unit": "Hz",
+      "status": "pass"
+    },
+    {
+      "name": "Phase margin",
+      "value": 73.0527191928014,
+      "target": 60.0,
+      "violation": -0.2175453098800234,
+      "unit": "deg",
+      "status": "pass"
+    },
+    {
+      "name": "-3dB BW",
+      "value": 6064.922151996187,
+      "target": 10000.0,
+      "violation": 0.39350778480038134,
+      "unit": "Hz",
+      "status": "fail"
+    },
+    {
+      "name": "SR rise",
+      "value": 37.40339011472512,
+      "target": 10.0,
+      "violation": -2.740339011472512,
+      "unit": "V/us",
+      "status": "pass"
+    },
+    {
+      "name": "SR fall",
+      "value": 116.23785285348058,
+      "target": 10.0,
+      "violation": -10.623785285348058,
+      "unit": "V/us",
+      "status": "pass"
+    },
+    {
+      "name": "DC balance",
+      "value": 3.156037338136741e-07,
+      "target": 0.001,
+      "violation": -0.9996843962661863,
+      "unit": "V error",
+      "status": "pass"
+    },
+    {
+      "name": "ICMR",
+      "value": [
+        0.05,
+        2.1
+      ],
+      "target": [
+        1.0,
+        2.0
+      ],
+      "violation": -0.10000000000000009,
+      "unit": "V",
+      "status": "pass"
+    },
+    {
+      "name": "OCMR",
+      "value": [
+        0.4,
+        2.9000000000000004
+      ],
+      "target": [
+        1.0,
+        2.0
+      ],
+      "violation": -0.6,
+      "unit": "V",
+      "status": "pass"
+    },
+    {
+      "name": "MOS saturation",
+      "value": -0.027000000000000024,
+      "target": 0.0,
+      "violation": 0.027000000000000024,
+      "unit": "V headroom",
+      "status": "fail"
+    },
+    {
+      "name": "Single unity crossing",
+      "value": 1,
+      "target": 1,
+      "violation": 0.0,
+      "unit": "count",
+      "status": "pass"
+    },
+    {
+      "name": "Step settles",
+      "value": true,
+      "target": true,
+      "violation": 0.0,
+      "unit": "bool",
+      "status": "pass"
+    }
+  ],
+  "feasible": false,
+  "score": 1.1555773766985031,
+  "fom": 990790281.2408711,
+  "score_description": "Lower is better: feasible <1, unmet constraints >=1; FoM is higher-better.",
+  "trial": 94,
+  "phase": "TPE / adaptive search",
+  "status": "measured"
+}

@@ -2,13 +2,208 @@
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 9,
-      "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
+      "bytes": 21,
+      "sha256": "a04c1ecee5f831666e805f64d7ab9b1f22cbb8550d7ca83bdad379e5f9a7439c"
     },
     {
       "path": "README.md",
-      "bytes": 3756,
-      "sha256": "201b552d33bc6c5a0c71f2da3b776843e3a4b0fca4bef30d7907b381118cbc2e"
+      "bytes": 3922,
+      "sha256": "dce0154a00dd5ede2efa1192f20ed30762565b887c33217a616afc033f0da6c8"
+    },
+    {
+      "path": "projects/opamp-optimization/.gitignore",
+      "bytes": 82,
+      "sha256": "cf719a5e1706641ab49d148b70dfc426b82a6b38f35aec17123f87c08ca56c60"
+    },
+    {
+      "path": "projects/opamp-optimization/Generate_Report.bat",
+      "bytes": 89,
+      "sha256": "b34f6a00fb955fd770dbe1e83e757141a7bcfd2a57bf3303504a71c07808dd07"
+    },
+    {
+      "path": "projects/opamp-optimization/README.md",
+      "bytes": 4246,
+      "sha256": "2f0d933f82c1989c108a3c0d36453e03302470c93b020aace3b95f1871b76573"
+    },
+    {
+      "path": "projects/opamp-optimization/Start_Dashboard.bat",
+      "bytes": 71,
+      "sha256": "ae632722cbee533b8f4b24d4e3a05adfa934e1ff914507b652fefb160be259f6"
+    },
+    {
+      "path": "projects/opamp-optimization/build_schematic.py",
+      "bytes": 5053,
+      "sha256": "f0c1e066b7c7b3f12543c8c8650f56ad33fce3f78edbad44336b8e2254e0aa7d"
+    },
+    {
+      "path": "projects/opamp-optimization/circuit_engine.py",
+      "bytes": 12854,
+      "sha256": "f64b90157f56f282f5b027874617af0e34dab99f6f8c1e33e4b5e554a7bc1e69"
+    },
+    {
+      "path": "projects/opamp-optimization/live_dashboard.py",
+      "bytes": 25236,
+      "sha256": "f9eb5543cd01c7d7a2374a2015fc8d2b75dcb97549278e511c6a9ac7df08a3bb"
+    },
+    {
+      "path": "projects/opamp-optimization/measure_baseline.py",
+      "bytes": 10157,
+      "sha256": "8d1b526c3ef23846a8a8da018ffe01124329defd1236af9e2a0882b50aeea433"
+    },
+    {
+      "path": "projects/opamp-optimization/optimizer.py",
+      "bytes": 12699,
+      "sha256": "beb9a0f1ab193567f070211f5a65dbda36b5f1e6791864973f8da3815144bd8a"
+    },
+    {
+      "path": "projects/opamp-optimization/overnight_support.py",
+      "bytes": 895,
+      "sha256": "d7787da63983b2f23c6c09fdeae360cf38677a282326a827ea0bf98067a8838d"
+    },
+    {
+      "path": "projects/opamp-optimization/provenance.json",
+      "bytes": 12318,
+      "sha256": "f74e38d106488a974309ceebb94e50d1d0eb3a1030ed24c297fc86b01fa5e1ee"
+    },
+    {
+      "path": "projects/opamp-optimization/report_generator.py",
+      "bytes": 34562,
+      "sha256": "a34f7532bde023725fd4aaa925a2c212ba4a5e6c48c5115f5b4bb08f051eee7e"
+    },
+    {
+      "path": "projects/opamp-optimization/report_profile.json",
+      "bytes": 997,
+      "sha256": "f956d093c966337cbf2b0be868f454603a7a0167ce5e1f166bfa811d729ea792"
+    },
+    {
+      "path": "projects/opamp-optimization/requirements.txt",
+      "bytes": 58,
+      "sha256": "7a39f105bdc657742cad00da87689b378fb19fc68c801d8919e2a95910411ee9"
+    },
+    {
+      "path": "projects/opamp-optimization/results/Optuna Op-Amp Optimization.pdf",
+      "bytes": 420048,
+      "sha256": "7de89ae284f76954f30326703d7d4a1c0f7158fce462156f4dcd9935353746f3"
+    },
+    {
+      "path": "projects/opamp-optimization/results/best_candidate.asc",
+      "bytes": 4006,
+      "sha256": "b0b1ab9609400acea642afacc4d2d14b1d9d6c86b38aa841104cd32f37c7ee1a"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/best.json",
+      "bytes": 5198,
+      "sha256": "1cbc6b32053faa691079de10e1b6fcc31a2306d08ae70dc1b93daae8225b849c"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/best_bode.csv",
+      "bytes": 62844,
+      "sha256": "371df0ef68f71edeb3e0a691b7012c56c6d4d43e316c2cb0ea6137dda35bc904"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/best_icmr.csv",
+      "bytes": 8439,
+      "sha256": "da505433825110a0eca1f1946228ae47ea23bc025be6cb03fdf189fcb2a8345d"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/best_ocmr.csv",
+      "bytes": 8469,
+      "sha256": "97846c79501c253d9eb0cf414fed3f4354f335f137b0cdb1078522fa884142cc"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/best_slew.csv",
+      "bytes": 182057,
+      "sha256": "53768f1c098d041552e6337a5940d662ce12f9772544e028b329ccefe1be3cb2"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/initial_bode.csv",
+      "bytes": 62517,
+      "sha256": "43ce68031ee11e72785aa7e3005d6fc89f6d6b3ea2586a6af53c587b4967d74e"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/initial_icmr.csv",
+      "bytes": 8439,
+      "sha256": "072d5b0dd213d5a90d2f3460ce5395bafff85cd26473743e6f8281ddbf82912f"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/initial_ocmr.csv",
+      "bytes": 8469,
+      "sha256": "3e00ddcb4f1ff07cdb16c6a34d6f6fac45b92fe30558615d44e9f799b4174863"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/initial_slew.csv",
+      "bytes": 181489,
+      "sha256": "aef16404edcd13c767ea3d54e3a6393fa161567f670c9075dd2324dd4a074a8b"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/session.json",
+      "bytes": 515914,
+      "sha256": "1c45bcfb70bbc3ecb41bd054221310e52715ed47b18b6ed5f8e064de84fa54fa"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/targets.json",
+      "bytes": 1424,
+      "sha256": "063e5d0f954170ba3942d71c3d132733edcd31675e185df3ddee3827bb0892cf"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/trials.csv",
+      "bytes": 14385,
+      "sha256": "5f05ad5ce2dcc58d46c049031ac6da8a42548bbeb7df35586098ce4f0429f636"
+    },
+    {
+      "path": "projects/opamp-optimization/results/data/trials.jsonl",
+      "bytes": 345678,
+      "sha256": "181d983ac599a53cfce599e9ff2f3932fe0dd08d62783383c6b0b6c27eb42c77"
+    },
+    {
+      "path": "projects/opamp-optimization/results/figures/frequency_response.png",
+      "bytes": 60087,
+      "sha256": "0a0ccc7b3de4da6a9310c4fba6599acab20f89fcd47f28ebf9429e2597b42514"
+    },
+    {
+      "path": "projects/opamp-optimization/results/figures/learning_history.png",
+      "bytes": 55196,
+      "sha256": "4c5e291a01feec1ef43ffc0fb378a42172d08718fc09b8b0258d17e456a9d027"
+    },
+    {
+      "path": "projects/opamp-optimization/results/figures/metric_evolution.png",
+      "bytes": 76006,
+      "sha256": "eea356189e01283a606690693a5ea159ef13c792621df7013b6412689889ccc8"
+    },
+    {
+      "path": "projects/opamp-optimization/results/figures/slew_response.png",
+      "bytes": 34973,
+      "sha256": "3417b1e76fd792b57191c25b7e7b7815fd47b7f7f960973e2ae04f506f8192c1"
+    },
+    {
+      "path": "projects/opamp-optimization/results/figures/target_comparison.png",
+      "bytes": 33643,
+      "sha256": "7678883af84d25b5c0d8860d8325bd41403d07d62162f02a89ee12107843d318"
+    },
+    {
+      "path": "projects/opamp-optimization/targets.json",
+      "bytes": 1424,
+      "sha256": "063e5d0f954170ba3942d71c3d132733edcd31675e185df3ddee3827bb0892cf"
+    },
+    {
+      "path": "projects/opamp-optimization/test_measurements.py",
+      "bytes": 3167,
+      "sha256": "ec03caa4e83b2ab4f859090b5fb6bc6cd492b813a9ae5b3095585ebf7fe13ea5"
+    },
+    {
+      "path": "projects/opamp-optimization/test_reports.py",
+      "bytes": 5198,
+      "sha256": "c7a422d8704f0ae736e5f69c43cbf26c44c1b7ed0328f3692ce5b737f9db17d5"
+    },
+    {
+      "path": "projects/opamp-optimization/test_run_modes.py",
+      "bytes": 5417,
+      "sha256": "27c7314fd2c2e188a03f148377f535b3330cfb61389bad48cf973d464a84dff3"
+    },
+    {
+      "path": "projects/opamp-optimization/two_stage_cmos_3v3_pdk.asc",
+      "bytes": 3758,
+      "sha256": "538017a4ab39c2689d6ae4e1375c8453eff90f7e3119570743f1ac96b45da552"
     },
     {
       "path": "reports/Analog/Multistage and Differential Amplifier Design.pdf",
@@ -436,5 +631,5 @@
       "sha256": "8db28f4d2fd113231dc5ff9bc59cb743cd0e8f04f01ce6284af9dbbf54a6db7e"
     }
   ],
-  "source": "Circuit design reports"
+  "source": "Circuit design reports and personal project source code"
 }

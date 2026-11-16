@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "circuit_id": "2stage_op_amp",
+  "title": "PMOS 입력 2단 연산증폭기 자동 사이징",
+  "process": "DB HiTek 110 nm 1533IL11SK Rev3p0",
+  "model_corner": "tt_33",
+  "temperature_c": 25,
+  "report_directory": "결과보고서",
+  "schematic": "two_stage_cmos_3v3_pdk.asc",
+  "compensation_mode": "Cc and Rz",
+  "parameter_units": {
+    "W12": "um",
+    "W34": "um",
+    "W5": "um",
+    "W6": "um",
+    "W7": "um",
+    "W8": "um",
+    "W9": "um",
+    "W10": "um",
+    "RZERO": "ohm",
+    "CCOMP": "pF"
+  },
+  "parameter_labels": {
+    "W12": "W1 = W2",
+    "W34": "W3 = W4",
+    "W5": "W5",
+    "W6": "W6",
+    "W7": "W7 each, m=2",
+    "W8": "W8",
+    "W9": "W9",
+    "W10": "W10",
+    "RZERO": "Rz",
+    "CCOMP": "Cc"
+  },
+  "notes": [
+    "M7 uses two parallel devices; total effective width is 2*W7.",
+    "Initial and best candidates both include Cc and Rz compensation.",
+    "No pre-compensation or Cc-only comparison is claimed unless separately simulated."
+  ]
+}

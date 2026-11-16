@@ -1,0 +1,257 @@
+{
+  "description": "Current source code and the archived 100-trial report. Model references made relative; local paths in data replaced with PROJECT_ROOT. No new circuit simulation. The current code includes run-control changes made after the report.",
+  "files": [
+    {
+      "source": "optimizer.py",
+      "published": "optimizer.py",
+      "source_sha256": "b6b7bf57d4fcc8a3d4d8ea046dd3d4dd471c0b8948f29f002e02ef57d71438e0",
+      "published_sha256": "beb9a0f1ab193567f070211f5a65dbda36b5f1e6791864973f8da3815144bd8a",
+      "changed": true
+    },
+    {
+      "source": "circuit_engine.py",
+      "published": "circuit_engine.py",
+      "source_sha256": "6834386e50deea33165e9da5ae8aa28ef7d8089e3625eaf0530f84709d88fbb4",
+      "published_sha256": "f64b90157f56f282f5b027874617af0e34dab99f6f8c1e33e4b5e554a7bc1e69",
+      "changed": true
+    },
+    {
+      "source": "measure_baseline.py",
+      "published": "measure_baseline.py",
+      "source_sha256": "964cc8f5ca9544422cd2968c9b50a83a6735dbb5082c68975a4d39c58b7e7e2e",
+      "published_sha256": "8d1b526c3ef23846a8a8da018ffe01124329defd1236af9e2a0882b50aeea433",
+      "changed": true
+    },
+    {
+      "source": "live_dashboard.py",
+      "published": "live_dashboard.py",
+      "source_sha256": "17522135950be95b8cb99b0412847ebb3fc48e1bc4ff7bd80b4453313885633b",
+      "published_sha256": "f9eb5543cd01c7d7a2374a2015fc8d2b75dcb97549278e511c6a9ac7df08a3bb",
+      "changed": true
+    },
+    {
+      "source": "overnight_support.py",
+      "published": "overnight_support.py",
+      "source_sha256": "d7787da63983b2f23c6c09fdeae360cf38677a282326a827ea0bf98067a8838d",
+      "published_sha256": "d7787da63983b2f23c6c09fdeae360cf38677a282326a827ea0bf98067a8838d",
+      "changed": false
+    },
+    {
+      "source": "report_generator.py",
+      "published": "report_generator.py",
+      "source_sha256": "050d538fd032bac7f3bbd16f4a90168c772dfead9a015d418b4d2ea428eec761",
+      "published_sha256": "a34f7532bde023725fd4aaa925a2c212ba4a5e6c48c5115f5b4bb08f051eee7e",
+      "changed": true
+    },
+    {
+      "source": "build_schematic.py",
+      "published": "build_schematic.py",
+      "source_sha256": "346b5163f202d350ad4ad4ed3608fbfba5cf40d2351bf368b43e68f608ea9933",
+      "published_sha256": "f0c1e066b7c7b3f12543c8c8650f56ad33fce3f78edbad44336b8e2254e0aa7d",
+      "changed": true
+    },
+    {
+      "source": "test_measurements.py",
+      "published": "test_measurements.py",
+      "source_sha256": "7ea721fea01aaccb857f4c358fc4e41beab1eb834b5c7b576eeabfd9fdd8ffd3",
+      "published_sha256": "ec03caa4e83b2ab4f859090b5fb6bc6cd492b813a9ae5b3095585ebf7fe13ea5",
+      "changed": true
+    },
+    {
+      "source": "test_reports.py",
+      "published": "test_reports.py",
+      "source_sha256": "13854f38d5b339bd70da6941630c7d1e7e944dfdb31970aa434bba8f29e225f3",
+      "published_sha256": "c7a422d8704f0ae736e5f69c43cbf26c44c1b7ed0328f3692ce5b737f9db17d5",
+      "changed": true
+    },
+    {
+      "source": "test_run_modes.py",
+      "published": "test_run_modes.py",
+      "source_sha256": "27c7314fd2c2e188a03f148377f535b3330cfb61389bad48cf973d464a84dff3",
+      "published_sha256": "27c7314fd2c2e188a03f148377f535b3330cfb61389bad48cf973d464a84dff3",
+      "changed": false
+    },
+    {
+      "source": "targets.json",
+      "published": "targets.json",
+      "source_sha256": "c450766ecad4d967a5a08c58fdf51b9f1d4d614fc80c28d2db3da03c34f8cd56",
+      "published_sha256": "063e5d0f954170ba3942d71c3d132733edcd31675e185df3ddee3827bb0892cf",
+      "changed": true
+    },
+    {
+      "source": "report_profile.json",
+      "published": "report_profile.json",
+      "source_sha256": "5d4aa9b04c671289c5088f9a03528f73e6cc1f6931ceca68c9a3a1631085ffd9",
+      "published_sha256": "f956d093c966337cbf2b0be868f454603a7a0167ce5e1f166bfa811d729ea792",
+      "changed": true
+    },
+    {
+      "source": "requirements.txt",
+      "published": "requirements.txt",
+      "source_sha256": "d29749af2c5369bf96b89b7ad09cb4deaa13a6bbeb548dd5b9cddff7bbaf6cfb",
+      "published_sha256": "7a39f105bdc657742cad00da87689b378fb19fc68c801d8919e2a95910411ee9",
+      "changed": true
+    },
+    {
+      "source": "two_stage_cmos_3v3_pdk.asc",
+      "published": "two_stage_cmos_3v3_pdk.asc",
+      "source_sha256": "4753ca1fa530b4638e9975d87761301261d786442c7e01fba5974c26bc76b21c",
+      "published_sha256": "538017a4ab39c2689d6ae4e1375c8453eff90f7e3119570743f1ac96b45da552",
+      "changed": true
+    },
+    {
+      "source": "Start_Dashboard.bat",
+      "published": "Start_Dashboard.bat",
+      "source_sha256": "c20bb814c4e323dba7d944ecea012219bebd6fbb68e9312fbbba6681aa5960e3",
+      "published_sha256": "ae632722cbee533b8f4b24d4e3a05adfa934e1ff914507b652fefb160be259f6",
+      "changed": true
+    },
+    {
+      "source": "Generate_Report.bat",
+      "published": "Generate_Report.bat",
+      "source_sha256": "bffea9331f039fd1c94623f46c2d5570c53e870224c4630a8855f4e9afc403cf",
+      "published_sha256": "b34f6a00fb955fd770dbe1e83e757141a7bcfd2a57bf3303504a71c07808dd07",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/2stage_op_amp_1차 보고서.pdf",
+      "published": "results/Optuna Op-Amp Optimization.pdf",
+      "source_sha256": "7de89ae284f76954f30326703d7d4a1c0f7158fce462156f4dcd9935353746f3",
+      "published_sha256": "7de89ae284f76954f30326703d7d4a1c0f7158fce462156f4dcd9935353746f3",
+      "changed": false
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/best_candidate.asc",
+      "published": "results/best_candidate.asc",
+      "source_sha256": "67ce921b8f2f9a75685f54d6c1c92f5bca7ba45290f2d7b67b483484a0dc1f2e",
+      "published_sha256": "b0b1ab9609400acea642afacc4d2d14b1d9d6c86b38aa841104cd32f37c7ee1a",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/figures/frequency_response.png",
+      "published": "results/figures/frequency_response.png",
+      "source_sha256": "0a0ccc7b3de4da6a9310c4fba6599acab20f89fcd47f28ebf9429e2597b42514",
+      "published_sha256": "0a0ccc7b3de4da6a9310c4fba6599acab20f89fcd47f28ebf9429e2597b42514",
+      "changed": false
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/figures/learning_history.png",
+      "published": "results/figures/learning_history.png",
+      "source_sha256": "4c5e291a01feec1ef43ffc0fb378a42172d08718fc09b8b0258d17e456a9d027",
+      "published_sha256": "4c5e291a01feec1ef43ffc0fb378a42172d08718fc09b8b0258d17e456a9d027",
+      "changed": false
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/figures/metric_evolution.png",
+      "published": "results/figures/metric_evolution.png",
+      "source_sha256": "eea356189e01283a606690693a5ea159ef13c792621df7013b6412689889ccc8",
+      "published_sha256": "eea356189e01283a606690693a5ea159ef13c792621df7013b6412689889ccc8",
+      "changed": false
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/figures/slew_response.png",
+      "published": "results/figures/slew_response.png",
+      "source_sha256": "3417b1e76fd792b57191c25b7e7b7815fd47b7f7f960973e2ae04f506f8192c1",
+      "published_sha256": "3417b1e76fd792b57191c25b7e7b7815fd47b7f7f960973e2ae04f506f8192c1",
+      "changed": false
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/figures/target_comparison.png",
+      "published": "results/figures/target_comparison.png",
+      "source_sha256": "7678883af84d25b5c0d8860d8325bd41403d07d62162f02a89ee12107843d318",
+      "published_sha256": "7678883af84d25b5c0d8860d8325bd41403d07d62162f02a89ee12107843d318",
+      "changed": false
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/best.json",
+      "published": "results/data/best.json",
+      "source_sha256": "168933c3d6a83f66bde00a064780e3efb7d6a77ab8ee916589a266cb55c91a01",
+      "published_sha256": "1cbc6b32053faa691079de10e1b6fcc31a2306d08ae70dc1b93daae8225b849c",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/best_bode.csv",
+      "published": "results/data/best_bode.csv",
+      "source_sha256": "20d8243a488b00e94d4a5166bdabbcc24f18564bec2b9ff5e9bbb93fd928a831",
+      "published_sha256": "371df0ef68f71edeb3e0a691b7012c56c6d4d43e316c2cb0ea6137dda35bc904",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/best_icmr.csv",
+      "published": "results/data/best_icmr.csv",
+      "source_sha256": "b3372704089de6e5e7150ba82c571a93076ecf1d731daf2492fdabb7419b9bc2",
+      "published_sha256": "da505433825110a0eca1f1946228ae47ea23bc025be6cb03fdf189fcb2a8345d",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/best_ocmr.csv",
+      "published": "results/data/best_ocmr.csv",
+      "source_sha256": "6014d9f059a876ec049e692152f9d0f6dbb7ee68ea6e5b0fccf3a8ccbfbc4ec6",
+      "published_sha256": "97846c79501c253d9eb0cf414fed3f4354f335f137b0cdb1078522fa884142cc",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/best_slew.csv",
+      "published": "results/data/best_slew.csv",
+      "source_sha256": "338e064df017069ecff27e5c6c5cc3a875de153aafdef74bc6e4c602fd0acdd4",
+      "published_sha256": "53768f1c098d041552e6337a5940d662ce12f9772544e028b329ccefe1be3cb2",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/initial_bode.csv",
+      "published": "results/data/initial_bode.csv",
+      "source_sha256": "f332b23af8a3d6cbf90d40ee73accbb468a97015259a2ab1d18b5e74461680d1",
+      "published_sha256": "43ce68031ee11e72785aa7e3005d6fc89f6d6b3ea2586a6af53c587b4967d74e",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/initial_icmr.csv",
+      "published": "results/data/initial_icmr.csv",
+      "source_sha256": "241b93581e17213ab655c4b6d2e9f7218be854bca61136e8ddb933ff92434057",
+      "published_sha256": "072d5b0dd213d5a90d2f3460ce5395bafff85cd26473743e6f8281ddbf82912f",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/initial_ocmr.csv",
+      "published": "results/data/initial_ocmr.csv",
+      "source_sha256": "c3ddd7a5f23f4f6e6528f3458ca54d2c2450423183cdd7824d5af47ea8a91952",
+      "published_sha256": "3e00ddcb4f1ff07cdb16c6a34d6f6fac45b92fe30558615d44e9f799b4174863",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/initial_slew.csv",
+      "published": "results/data/initial_slew.csv",
+      "source_sha256": "f39f176b0057d0c47cc559b13fcc12ac4373f3fcb29c470165fa99fe2d54fe18",
+      "published_sha256": "aef16404edcd13c767ea3d54e3a6393fa161567f670c9075dd2324dd4a074a8b",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/session.json",
+      "published": "results/data/session.json",
+      "source_sha256": "9c79d3857227b2b82012a7e255abc6b4bdf7416676e243e236b8fa6510ac325c",
+      "published_sha256": "1c45bcfb70bbc3ecb41bd054221310e52715ed47b18b6ed5f8e064de84fa54fa",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/targets.json",
+      "published": "results/data/targets.json",
+      "source_sha256": "c450766ecad4d967a5a08c58fdf51b9f1d4d614fc80c28d2db3da03c34f8cd56",
+      "published_sha256": "063e5d0f954170ba3942d71c3d132733edcd31675e185df3ddee3827bb0892cf",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/trials.csv",
+      "published": "results/data/trials.csv",
+      "source_sha256": "24171357a3d3dbb6187c7c73314458b9754399b0eb7cb428cb4e6bfbdfa7abed",
+      "published_sha256": "5f05ad5ce2dcc58d46c049031ac6da8a42548bbeb7df35586098ce4f0429f636",
+      "changed": true
+    },
+    {
+      "source": "결과보고서/2stage_op_amp_1차 보고서/source_data/trials.jsonl",
+      "published": "results/data/trials.jsonl",
+      "source_sha256": "53aa35cb9d894f40973db3884235df23fd481d76d2a2f47ffc35bf305ebfbd41",
+      "published_sha256": "181d983ac599a53cfce599e9ff2f3932fe0dd08d62783383c6b0b6c27eb42c77",
+      "changed": true
+    }
+  ]
+}

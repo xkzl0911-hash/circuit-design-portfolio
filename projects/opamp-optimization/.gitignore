@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+models/
+runs/
+measurements/
+결과보고서/
+*.raw
+*.log
+*.net

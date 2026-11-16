@@ -24,7 +24,7 @@
 
 | 프로젝트 | 설계 내용 | 자료 |
 |---|---|---|
-| 베이지안 기반 OP-Amp 스펙 최적화 | 베이지안 최적화를 이용한 OP-Amp 스펙 탐색 | — |
+| Optuna 기반 OP-Amp 스펙 최적화 | TPE 탐색과 LTspice 측정을 이용한 2단 OP-Amp 사이징·보상 소자 최적화 | [설명·Python 코드](projects/opamp-optimization/README.md) · [PDF](projects/opamp-optimization/results/Optuna%20Op-Amp%20Optimization.pdf) |
 | SRAM 기반 인공신경망 | 8T SRAM 기반 고정소수점 연산·가중치 갱신·단계적 비트 읽기 설계안 | [PDF](reports/CIM/SRAM-CIM%20Accelerator%20Proposal.pdf) · [개요](reports/CIM/SRAM-CIM%20Accelerator.md) |
 
 ## 설계 도구

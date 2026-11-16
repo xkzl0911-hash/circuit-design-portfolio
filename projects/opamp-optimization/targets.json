@@ -1,0 +1,42 @@
+{
+  "source": "User-provided specification image, 2026-10-20",
+  "supply_v": 3.3,
+  "length_m": 1e-06,
+  "load_capacitance_f": 1e-11,
+  "power_max_mw": 10.0,
+  "sr_min_v_per_us": 10.0,
+  "f_unity_min_hz_exclusive": 1000000.0,
+  "pm_min_deg_exclusive": 60.0,
+  "gain_min_db_exclusive": 60.0,
+  "f3db_multiplier_of_fin": 10.0,
+  "input_frequency_hz": 1000.0,
+  "icmr_required_interval_v": [
+    1.0,
+    2.0
+  ],
+  "ocmr_required_interval_v": [
+    1.0,
+    2.0
+  ],
+  "range_interpretation": "Provisional: must cover at least [1,2] V.",
+  "f3db_interpretation": "Provisional open-loop relative -3dB bandwidth; confirm reference of fin.",
+  "fom_definition": "Assignment convention: gain_dB * f_unity_Hz / power_mW (not a linear-gain FoM).",
+  "comparison_cases": [
+    "before_compensation",
+    "Cc_only",
+    "Cc_and_Rz"
+  ],
+  "assignment_image_supply_v": 3.5,
+  "supply_resolution": "User explicitly reconfirmed 3.3V after seeing the 3.5V assignment image.",
+  "minimum_device_width_m": 5e-06,
+  "input_small_signal_vpp_max_v": 0.001,
+  "input_common_mode_v": 1.65,
+  "desired_output_dc_v": 1.65,
+  "cc_minimum_exclusive_f": 2e-12,
+  "dc_balance_requirement": "Systematic offset zero; determine M3/M4 sizes. Numerical tolerance not yet specified.",
+  "dc_balance_tolerance_v": 0.001,
+  "range_step_v": 0.05,
+  "range_servo_tolerance_v": 0.001,
+  "range_input_difference_limit_v": 0.01,
+  "range_gain_min_linear": 1000.0
+}
