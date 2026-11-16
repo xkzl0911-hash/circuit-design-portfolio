@@ -7,8 +7,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3922,
-      "sha256": "ae2ca336fa5b137a09f96191892c8c2d09830caaeb2ff2790761a1b86695cf6c"
+      "bytes": 3013,
+      "sha256": "e708425633e893db5c3fcdee6a04bd8a4788c4819ea902c18920aa2f75397fe4"
     },
     {
       "path": "projects/opamp-optimization/.gitignore",
@@ -22,8 +22,8 @@
     },
     {
       "path": "projects/opamp-optimization/README.md",
-      "bytes": 4246,
-      "sha256": "2f0d933f82c1989c108a3c0d36453e03302470c93b020aace3b95f1871b76573"
+      "bytes": 1977,
+      "sha256": "5e760b205c591d70f3856d93d6190e555ffe4783b12d25b8dc38616688435b64"
     },
     {
       "path": "projects/opamp-optimization/Start_Dashboard.bat",
@@ -211,19 +211,9 @@
       "sha256": "042e8d26df89cb3b78af63c6fa570d379bbf36ac5ed69d46a741d7a0155dbda0"
     },
     {
-      "path": "reports/Analog/Multistage and Differential Amplifier Design.txt",
-      "bytes": 23939,
-      "sha256": "850e0d60f60146a1baae8449bf37db7d17df8afab117fb230cf1cec73344fdac"
-    },
-    {
       "path": "reports/Analog/Single-Stage Amplifier Design.pdf",
       "bytes": 6243528,
       "sha256": "7cfdf66fa75ef61ce030bebe077e38bc4e0cdcf87a097c707785e3587308a97d"
-    },
-    {
-      "path": "reports/Analog/Single-Stage Amplifier Design.txt",
-      "bytes": 31622,
-      "sha256": "af5c2170b134c368df517202089e3f154fc217da68aa0ca9bf91220b089bd732"
     },
     {
       "path": "reports/Analog/Two-Stage Op-Amp Design.pdf",
@@ -231,29 +221,14 @@
       "sha256": "1bc2f2b2bd6b365fd3e97640739e8b73caeb3d47fbbcb5c68647e3f4a8811320"
     },
     {
-      "path": "reports/Analog/Two-Stage Op-Amp Design.txt",
-      "bytes": 21668,
-      "sha256": "14b9a17c6cef835c7154536061c5540eaacc300d60d121b24297e7897ec7d8e2"
-    },
-    {
       "path": "reports/CIM/SRAM-CIM Accelerator Proposal.pdf",
       "bytes": 220924,
       "sha256": "a47d2b39cdc3b7742aa7b74b68401f2215dea9949a33625cd699d80919596a26"
     },
     {
-      "path": "reports/CIM/SRAM-CIM Accelerator.md",
-      "bytes": 849,
-      "sha256": "8e323265ed958104ae959aaef549d1fa31bf5383779ac29844d1b2366a529bc6"
-    },
-    {
       "path": "reports/CIS/4-bit CMOS Image Sensor.pdf",
       "bytes": 7658271,
       "sha256": "b330e21745d34234215059fd1c7ffda4b1310605e1171bb5101732cebab7d1bd"
-    },
-    {
-      "path": "reports/CIS/4x4 CMOS Image Sensor.md",
-      "bytes": 27031,
-      "sha256": "da261562a8b5b544f3c09a63d16d7fb32ea0dc28589fc8b675c4e0cec9cf498e"
     },
     {
       "path": "reports/CIS/5-bit CMOS Image Sensor.pdf",
@@ -571,29 +546,14 @@
       "sha256": "e3e6eadc39845a665f0a3126b0a3b4c946bf1b6e521ff9fc5a69222e2065964d"
     },
     {
-      "path": "reports/Digital/Advanced FSM Design.txt",
-      "bytes": 16320,
-      "sha256": "b8e5b0631e67d8369cbae0c2eca370f2becbabb04145345e35279328161c0786"
-    },
-    {
       "path": "reports/Digital/CMOS Logic Design Comparison.pdf",
       "bytes": 8023813,
       "sha256": "a15078d0fc2dae0f00cc382f797e02708c1250dfc357d50332099209b3ab7281"
     },
     {
-      "path": "reports/Digital/CMOS Logic Design Comparison.txt",
-      "bytes": 20427,
-      "sha256": "a2e989b19f6f4d8d6a1ba8629100eb70b99553090af200ff55e27971fd59b65c"
-    },
-    {
       "path": "reports/Digital/FSM Chip Design.pdf",
       "bytes": 6613115,
       "sha256": "cc6053a7cbe1cf4c8f630a001ebef095bb1fed3d2fd7b2e60ed1d17c7c0327a7"
-    },
-    {
-      "path": "reports/Digital/FSM Chip Design.txt",
-      "bytes": 14444,
-      "sha256": "6d515ea54471ea167d21bf89bff02ffa0b60daff6d66f029fdc154c5dae00c98"
     },
     {
       "path": "reports/Electronic/Network Transfer Function Analysis.pdf",
@@ -616,19 +576,9 @@
       "sha256": "2a6ee60ee81ccb21c4425826beabd8f25b14aac704d99a2e36f804c4c1b48c5e"
     },
     {
-      "path": "reports/Memory/1K DRAM Architecture.txt",
-      "bytes": 19368,
-      "sha256": "faf11d28b79ca3422cc4dbf1c637a007466478fdd836f80b3a7698c672eb6c6f"
-    },
-    {
       "path": "reports/Memory/6T and 7T SRAM Design.pdf",
       "bytes": 8844505,
       "sha256": "ec13cb687245264ed31f5ee686ebab1df4232b6689382901157583b2ac2d2582"
-    },
-    {
-      "path": "reports/Memory/6T and 7T SRAM Design.txt",
-      "bytes": 20516,
-      "sha256": "8db28f4d2fd113231dc5ff9bc59cb743cd0e8f04f01ce6284af9dbbf54a6db7e"
     }
   ],
   "source": "Circuit design reports and personal project source code"
