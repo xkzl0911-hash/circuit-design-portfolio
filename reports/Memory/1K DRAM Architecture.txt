@@ -1,0 +1,744 @@
+PDF: 1K DRAM Architecture.pdf
+
+
+===== PAGE 1 =====
+
+
+-메모리회로설계및실습 2차과제-
+
+
+
+
+
+
+
+
+
+
+
+ 2021110522 김의연(50%)
+ 2023110512 오연재(50%)
+
+
+
+
+
+===== PAGE 2 =====
+
+-목차-
+
+Ⅰ. 서론
+1. Research motivation
+
+Ⅱ. 본론
+1. 8 x 8 Cell Array-4 Array-4Bank 1024bit DRAM
+2. 8 x 4 Cell Array-8 Array-4Bank 1024bit DRAM
+
+
+Ⅲ. 결론
+1.Discussion & PDA
+2.Feeling
+
+
+
+
+
+===== PAGE 3 =====
+
+Ⅰ. 서론
+1. Research motivation
+현대 전자 시스템에서 메모리는 데이터를 저장하고 처리하는 핵심 요소로, 그 성능은 전
+체 시스템의 효율성을 결정짓는 중요한 요인이다. 특히 DRAM(Dynamic Random Access
+Memory)은 높은 집적도와 낮은 비용으로 대용량 메모리를 구현할 수 있어 컴퓨터 메인
+메모리로 광범위하게 사용되고 있다.
+본 과제에서는 1024bit DRAM을 직접 설계하고 구현함으로써 메모리 회로의 동작 원리
+를 심층적으로 이해하는 것을 목표로 한다. DRAM의 기본 동작인 Write, Read,
+Precharge, Restore 사이클을 각 서브 회로 단위로 분리하여 설계하고, 이를 계층적으로
+통합하여 완전한 메모리 시스템을 구성하였다.
+두 팀은 동일한 총 용량인 1024bit DRAM을 서로 다른 구조로 설계하였다. 8×8 Cell
+Array, 4 Array, 4 Bank 구성과 8×4 Cell Array, 8 Array, 4 Bank 구성을 채택하였고. 이를
+통해 동일 용량의 메모리를 구성하는 방식이 다를 때 전력, 면적, 속도 측면에서 어떠한
+차이가 발생하는지 비교·분석하고자 한다.
+
+
+
+
+
+
+
+
+
+
+
+
+===== PAGE 4 =====
+
+Ⅱ. 본론
+1. 8 x 8 Cell Array-4 Array-4Bank 1024bit DRAM
+Cell Array Bank bit
+8 x 8 4 4 1024
+
+1)Dram cell
+다음과 같이 2T 2C Dram을 설계하였다.
+-Schematic
+
+-Symbol
+
+-Layout
+
+
+
+===== PAGE 5 =====
+
+2)Precharge circuit
+ Read 동작을 위해 Bit Line과 Bit LineB는 먼저 𝑉𝐷𝐷/2로 precharge된 후 floating 상태가
+되어야 한다. 이후 선택된 cell의 저장 data에 따라 두 bit line의 전압이 변화한다. 따라
+서 PE가 LOW일 때 PMOS가 turn-on되어 Bit Line과 Bit LineB를 𝑉𝐷𝐷/2로 precharge하고,
+PE가 HIGH일 때 PMOS가 turn-off되어 두 bit line을 floating 상태로 유지하는 precharge
+circuit을 설계하였다.
+-Schematic                                          -Symbol
+
+
+
+
+
+-Layout
+
+-DRC & LVS
+집적도를 위해 Inverter는 다른 한 쪽으로 따로설계하고 precharge circuit의 pmos부분만
+따로 Layout하여 routing했을 때의 최종 DRC와 LVS로 검증하겠다.
+
+
+
+
+
+===== PAGE 6 =====
+
+3)Word Line Boost with Bootstrap
+WL의 High인 전압을 1.5V로 하면 nMOS는 VTH만큼 감소시킨 weak High를 전달시키
+기 때문에 WL의 High인 전압을 VDD+VTH까지 올려줄 필요가 있다. 따라서 다음과 같이
+Bootstrap을 설계하였다.
+-Schematic
+
+
+
+
+-Symbol
+
+
+
+-Simulation
+
+
+Nmos의 VTH는 위와 같으므로 충분히 Strong High를 전달할 수 있는 Bootstrap으로 활용
+할 수 있다.
+
+
+
+===== PAGE 7 =====
+
+-Layout
+
+
+
+4)Row Decoder & Colum Decoder
+특정 Word Line만 High로 만들어주는 Row Decoder를 다음과 같이 설계하였다.
+
+
+
+
+
+===== PAGE 8 =====
+
+-Schematic                                    -Symbol
+
+
+
+
+
+
+
+
+
+
+
+
+-Simulation
+
+하나의 출력만 high이고 나머지는 Low임을 확인할 수있다.
+
+
+
+
+===== PAGE 9 =====
+
+-Layout
+
+
+
+
+
+또한 Word Line enable(WL_EN) signal을 Decoder와 AND연
+산하여 WL_EN이 High인 경우에만 특정 Word Line이 turn
+on되도록 설계하였다.
+
+
+
+
+
+
+
+
+
+===== PAGE 10 =====
+
+5)Column MUX
+ Column Decoder와 TG-switch를 활용하여 다음과 같이 Column MUX를 설계하였다.
+-Schematic
+
+-Layout
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PAGE 11 =====
+
+6)Write Driver
+ 하나의 선택된 특정 Bit Line과 Bit LineB에 우리가 원하는 입력을 forcing 하기위해
+Buffer와 TG Switch를 이용하여 다음과 같이 Write Driver를 설계하였다.
+-Schematic                              -Symbol
+
+-Layout                                  -DRC & LVS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PAGE 12 =====
+
+7)Sense Amplifier
+ DRAM cell에 저장된 data를 read할 때, 선택된 cell은 Bit Line과 Bit LineB 전압을 미세
+하게 변화시킨다. 그러나 cell이 직접 만들어내는 전압 차이는 매우 작기 때문에, 이를 그
+대로 digital logic으로 사용하기 어렵다. 따라서 두 bit line 사이에 발생한 작은 전압 차
+이를 감지하고 증폭하여 명확한 logic level로 변환하기 위해 Sense Amplifier & buffer를
+다음과 같이 설계하였다.
+-Schematic                                    -Symbol
+
+-
+
+-S
+
+
+-Layout(buffer는 Array에서 한번에 연결하겠다.)   -DRC & LVS
+
+
+
+===== PAGE 13 =====
+
+8)Restore circuit
+Dram은 cell의 data를 read 하면 capacitor의 charge sharing이 발생하여 원래 저장되
+어 있던 Strong high가 weak high로 떨어지고 이를 다시 read하면 문제가 발생할 수 있
+다. 따라서 Sense Amplifier & buffer에서 출력된 값을 다시 cell에 write를 해주기 위해
+다음과 같이 Restore circuit를 설계하였다.
+-Schematic
+
+Read 이후 RT_EN signal을 High로 하여 Sense Amplifier & buffer에서 출력된 값이 IN
+으로 입력되어 다시 Bit Line과 Bit LineB에 write되도록 설계하였다.
+-Layout
+
+
+
+
+
+
+
+
+
+
+
+
+
+===== PAGE 14 =====
+
+9)DETDFF
+CLK의 rising & falling edge마다 data를 저장시키는 Double ETDFF를 다음과 같이 설계하
+였다.
+-Schematic
+
+-Layout
+
+
+
+
+
+===== PAGE 15 =====
+
+10)1 DRAM cell simulation
+8 x 8 Array를 설계하기전 지금까지 설계한 회로가 잘 작동하는지 다음과 같이 확인하려
+한다.
+-Schematic(WL은 임시로 전압원으로 인가하였다.)
+
+-Simulation
+Write high-> Read high-> Restore-> Write Low-> Read Low로 진행하였고 Precharge,
+Write Driver,Sense Amp, Restore등 주변 회로가 잘 동작하며 정상적으로 작동함을 확인
+하였다.
+
+
+
+
+===== PAGE 16 =====
+
+11)8 x 8 Cell Array
+1 Cell Dram이 잘 작동함을 확인하였으므로 다음과 같이 Array를 설계하였다.
+-Symbol
+
+
+
+
+
+
+BL & BLB의 기생 Capacitor는 다음과 같이 구현하였다.
+
+
+
+
+
+===== PAGE 17 =====
+
+-Simulation
+
+임의의 Adress중 W3 & BL5에 있는 Cell에 high를 write하고 read하고 Low를 write하고
+read하는데 성공하였다.
+
+-Layout
+
+
+
+
+===== PAGE 18 =====
+
+
+
+
+
+
+
+
+
+
+
+===== PAGE 19 =====
+
+11)4 Array Bank
+4 Array와 특정 Array를 선택할 수 있도록 하는 2 to 4 MUX를 상위 Cell에 설계하였고
+상위 Cell에서 선택된 Array에만 SA_EN & RT_EN signal이 인가되도록 설계하였고 또한
+특정 Array의 값을 선택하여 출력하도록 다음과 같이 1Bank를 설계하였다.
+
+
+-Symbol
+
+
+
+
+
+
+
+===== PAGE 20 =====
+
+-Layout
+
+
+
+
+
+
+
+
+===== PAGE 21 =====
+
+
+
+12)4 Bank 1024bit DRAM
+4개의 입력을 받아 4개의 출력을 만드는 4 Bank 1024bit DRAM을 다음과 같이 설계하
+였다.
+-Schematic
+
+
+
+
+
+===== PAGE 22 =====
+
+-Simulation
+Bank1의 Array1의 W7 & BL7에는 LOW를, Bank2의 Array2의 W6 & BL6에는 High를
+Bank3의 Array3의 W5 & BL5에는 LOW를, Bank4의 Arra4y의 W4 & BL4에는 high를
+순서대로 write하고 read하며 high가 쓰여진 cell은 Restore도 됨을 확인할 수 있다.
+
+
+
+
+
+
+
+
+===== PAGE 23 =====
+
+-Power
+
+Power: 1.5V x 3.374565uA= 5.062uW
+
+-Delay
+Write Delay:110.6ns
+
+Read Delay:30.08ns
+
+
+
+
+
+
+
+===== PAGE 24 =====
+
+-Area
+
+985.838um × 617.362um = 608619.682um2
+
+
+
+
+
+
+
+===== PAGE 25 =====
+
+
+
+
+
+
+
+
+
+
+
+
+===== PAGE 26 =====
+
+2. 8 x 4 Cell Array-8 Array-4Bank 1024Bit DRAM
+DRAM 1024bit을 설계하기 위해 각각의 cell의 개수와 array, Bank 개수를 정리하였다.
+
+다음과 같이 나누어 두었으며 이를 바탕으로 input을 어디에 넣고, output을 무엇으로 설
+정하여 몇 bit의 output 메모리를 설정할지 설계해보자.
+
+4개의 bank에 각각 하나의 input에 따른 하나의 output으로 동시에 각각의 bank에서
+output이 나와 총 4bit의 결과값이 나오게 설계하였다. Bank안에는 8개의 array가 구성되
+어 있으며 아래와 같다.
+
+
+===== PAGE 27 =====
+
+
+이러한 array는 각각에 들어오는 input date를 정해진 위치에 따라 하나의 cell에 입력되
+어야 하기 때문에 TG MUX를 사용하여 아래와 같이 설계한다.
+
+또한 read할 때 output으로 나오는 값이 어느 array에서 나오는 것을 사용할 것인지도
+MUX를 통해서 하나의 값이 출력되도록 설계하고자 한다.
+
+
+
+
+
+
+===== PAGE 28 =====
+
+2T DRAM 1cell
+
+DRAM의 1cell은 다음과 같이 설계되었으며 정상적으로 작동하는지 SRAM에서 진행한
+것처럼 Sense AMP와 Pre-charge, Write-Driver을 이용하여 결과를 확인해 본다.
+
+Sense AMP의 경우 LATCH 타입을 사용하였다. 입력된 값이 정상적으로 BL에 나오는 것
+을 확인할 수 있다.
+DRAM layout은 다음과 같이 완성되었다.
+
+
+===== PAGE 29 =====
+
+
+
+
+<Array>
+정상적인 작동을 위한 32bit의 cell을 나열하고 위에서 WL과 BL decoder을 제작하여 준
+다. 위에서는 WL에 1.5V를 인가하였지만 BL에 여러 개의 cell이 달릴 경우 같은 값을 강
+하게 Forcing 하기 어려워 지는데, 이로 인해 MOS에서 줄어드는 전압을 최소화 하고자
+WL을 2V이상으로 올려주어야 한다. 이는 SRAM에서 Level-up-shift를 사용했던 것과 비
+슷한 이유다. 이번에는 Bootstrap Circuit을 사용하였으면 각각의 Schematic과 simulation
+결과값은 아래와 같다.
+
+
+
+===== PAGE 30 =====
+
+정상적으로 2V이상의 값이 출력되는 것을 확인할 수 있다.
+layout은 다음과 같이 완성되었다
+
+WL을 하나만 선택하도록 설계하고 Bootstrap Circuit을 달아서 WL Decoder을 완성시켜
+준다. WL Decoder의 경우 PLD방식으로 제작하였다.
+
+Simulation을 통해 다음과 같이 정상적으로 작동함을 확인할 수 있다.
+
+
+===== PAGE 31 =====
+
+
+Layout은 다음과 같다.
+
+BL Decoder또한 PLD방식으로 제작해 주었다.
+
+
+
+===== PAGE 32 =====
+
+
+WL과 BL모두 Pre-charge 상태에서는 off가 되도록 설계해 주었다. Layout은 다음과 같다.
+
+Read 후에 BL에서 출력된 값을 CLK에 맞춰 정상적으로 작동할 수 있도록 DFF를 제작해
+주었다. 이 때 WE(쓰기 신호)가 HIGH일 때는 작동하지 않도록 Resetb를 넣어주었다.
+회로의 Schematic은 아래와 같다.
+
+
+===== PAGE 33 =====
+
+
+Layout은 다음과 같다.
+
+
+
+아래 DFF가 하나만 있는 경우에는 Positive Edge의 Data를 낚아 채기 때문에 두 개의
+DFF를 제작하여 Positive Edge와 negative Edge일 때 모두 data값을 낚아챌 수 있도록
+다음과 같이 제작해 주었다.
+
+
+
+===== PAGE 34 =====
+
+
+Simulation을 통해 Edge일 때 Data값을 낚아 채 OUT으로 나오는 것을 확인할 수 있다.
+Layout은 다음과 같다.
+
+
+
+===== PAGE 35 =====
+
+
+설계한 각각의 회로를 모두 병합하여 하나의 Array를 제작하면 아래와 같다.
+
+
+
+===== PAGE 36 =====
+
+
+DRAM cell 제외 아래 driver들은 다음과 같으며 각각 BL마다 Sense AMP와 Pre-charge를
+달아주었고 BL Decoder와 MUX를 통해 Write Driver, DDR을 달아주었다. 또한 WE가
+HIGH일 때와 Pre-charge되는 시간 및 WL, SAN, SAP가 활성화가 제대로 되기 전까지 불
+명확한 date값을 줄이기 위해 다음과 같이 Resetb 신호를 제작해 주었다.
+회로를 작동한 전체 Simulation은 아래와 같다.
+
+
+
+
+===== PAGE 37 =====
+
+Write의 경우 각각 선택된 cell의 값은 아래와 같이 순차적으로 입력된다.
+
+Write한 값이 read할 때 잘 나오는 것을 확인할 수 있으며  DDR또한 Positive Edge와
+negative Edge일 때 모두 date값을 잘 낚아채어 output으로 나왔음을 확인할 수 있다.
+
+설계된 회로의 layout은 다음과 같다.
+
+
+
+
+
+
+
+===== PAGE 38 =====
+
+
+<8Array_1Bank>
+정상적으로 잘 설계된 Array를 앞서 설계했던 대로 8Array를 1Bank로 구성하면 아래와
+같다.
+
+Input과 output에 각각 TG-Switch를 달아 MUX를 제작하였다. MUX 를 선택하는 Array-
+Decoder의 경우 WL과 BL처럼 PLD방식을 활용하여 제작하였다.
+
+
+===== PAGE 39 =====
+
+
+Simulation을 통해 선택된 Array에만 Write가 되고, read output 이 되어 output신호가 정
+상적으로 나왔음을 확인할 수 있다.
+설계한 회로의 layout은 다음과 같다.
+
+
+
+
+
+
+
+
+
+===== PAGE 40 =====
+
+<4Bank Full Design>
+1Bank를 4개 만들어서 최종석으로 Full Design하면 다음과 같다.
+
+각각 정상적으로 확인하는지 위해 Delay를 주어 같은 주기에 각각 다른 INPUT의 값이
+들어가도록 Input에 Delay를 아래와 같이 주었다.
+
+
+===== PAGE 41 =====
+
+
+Delay가 된 상태에서는 0의 값이 입력되기 때문에 아래와 같이 나오게 된다.
+Bank0             Bank1            Bank2            Bank3
+
+이를 바탕으로 read된 값을 확인해 보면
+
+
+===== PAGE 42 =====
+
+
+정상적으로 설계되었음을 확인할 수 있다.
+설계한 회로를 바탕으로 Layout을 진행해주면 다음과 같이 완성된다.
+
+
+
+
+
+
+
+
+
+===== PAGE 43 =====
+
+<Power>
+
+1.5V * 979.897u=1,469.84 (약 1470uW)
+0.75 * 35.1272u=26.3454 (약 26uW)
+총합 1496uW
+<Delay>
+
+Date read Delay
+Rising : 0.72ns
+Falling : 2.15ns
+<Area>
+
+969.783 × 615.531 = 596931.542um2
+
+
+
+===== PAGE 44 =====
+
+Ⅲ. 결론
+1.Discussion
+Performance 1번회로 2번회로
+Power 5.062 μW 1496uW
+Delay 30ns 1.4ns
+Area 608619.682um2 596931.542um2
+
+
+Performance 1번회로 2번회로
+Power 1 295.6
+Delay 1 0.047
+Area 1 0.981
+PDA 1 13.63
+
+PDA 곱은 Power × Delay × Area를 하나의 수치로 통합하여 회로의 종합적인 효율을 평
+가하는 지표이다. 값이 작을수록 전력, 속도, 면적의 균형이 우수한 설계임을 의미한다.
+1번 회로의 PDA 곱을 1로 기준 잡았을 때 2번 회로는 약 13.63으로, 종합 효율 면에서
+1번 회로가 훨씬 우수함을 확인할 수 있다. 이는 2번 회로가 Delay에서 약 21배 빠른 장
+점을 가짐에도 불구하고, Power가 약 296배 높다는 치명적인 단점이 PDA 곱 전체를 크
+게 끌어올렸기 때문이다. Area는 두 설계 모두 거의 동일하여 (0.981배) 이 항목이 PDA
+곱의 차이에 미치는 영향은 미미하다.
+이러한 결과는 DRAM 설계에서 나타나는 전형적인 trade-off 관계를 잘 보여준다. Array
+를 작게 나눌수록 Bit Line의 길이가 짧아져 기생 커패시턴스가 감소하고 Sense Amplifier
+의 동작 속도가 향상되어 Read Delay가 줄어든다. 그러나 Array 수가 늘어남에 따라 주
+변 회로인 Decoder, MUX, Sense Amplifier, Write Driver 등의 수도 함께 증가하여 소비
+전력이 급격히 증가한다. 2번 회로는 8×4 Cell Array를 8개 사용한 구조로 이 부담이 집
+중되어 나타난 것이다.
+반면 1번 회로는 8×8 Cell Array를 4개 사용함으로써 주변 회로의 수를 최소화하고 전력
+소모를 극단적으로 낮추었다. Delay는 상대적으로 느리지만 30ns 수준은 실용적인 동작
+범위 안에 있으며, 저전력이 중요한 응용 환경에서는 매우 유리한 선택이다.
+
+===== PAGE 45 =====
+
+결론적으로 단순 속도 성능만을 고려하면 2번 회로가 우위에 있으나, PDA 곱이라는 종
+합적 관점에서는 1번 회로가 약 13.6배 더 효율적인 설계임을 확인하였다. 향후 설계 개
+선 방향으로는 2번 회로의 전력 소모를 줄이기 위한 회로 최적화, 또는 두 구조의 중간
+형태인 Array 크기와 수를 균형 있게 조정하는 방식을 고려해볼 수 있다.
+
+2.Feeling
+오연재
+ 실제 산업에서 판매하는 칩보다는 여전히 너무 작겠지만 그래도 여태 만들어보았던 칩
+들 중에서는 가장 큰 칩을 제작해보아서 뭔가 신기했다. 내 나름대로 크다고 생각하는
+칩을 제작했지만 여전히 너무 작은 칩일 거라는 사실이 뭔가 시원 섭섭하기도 했다. 내
+가 이런 노력을 했지만 여전히 작다는 사실이 얼마나 많은 것들이 들어가 있는지 가늠하
+기도 어려운 것 같다. 하지만 layout 작업은 다른 작업들 중에서도 그려 나간다는 느낌이
+눈으로 바로 그려서 그런가 재미있었던 거 같다. 주말동안 밥 먹는 시간, 씻는 시간 말고
+는 layout만 해서 그런지 끝내지 못하면 어떻게 하지 걱정한 걸 2일만에 끝내고 보고서
+작성을 과제 마감 3일전에 끝냈다는 사실이… 이정도면 나도 반도체인이라고 해도 되는
+걸까. 그래도 아직 배울 것이 한참 남았다는 사실을 생각하며 다시 다른 과제와 다른 과
+목을 공부해 나가야 할 것이다. 2차과제에서 내가 전자기학을 만들었으면 호박만 비비다
+끝났을 거 같다고 했지만 3차 과제를 잘 끝내고 나니 그래도 호박을 비비고 놀다가 정
+전기의 존재까지는 확인해 보았을 거 같다. 힘들었지만 함께 한 학기 동안 같이 달려준
+의연오빠에게도 수고했다는 걸로 이번 학기 과제를 마무리하고 싶다.
+
+김의연
+ 그렇게 힘들다던 악명높은 3-1이 막을 내린다. 먼저 조원 연재에게 고맙다는 말을 해주
+고 싶고 배울 점이 많았다. “설계를 완성해도 면적을 더 줄일 수 있지 않을까? “ “power
+를 좀 더 줄일 수 있지 않을까?”와 같은 회로를 완성하는 것이 목표였던 나와 달리 진짜
+회로를 최적화하며 시뮬레이션을 뽑아내고 면적을 어떻게든 최적화해볼려고 하는 것이
+보였다. 1차과제의 그 모습을 보고 2차과제는 나도 어떻게든 시뮬레이션을 내가 원하는
+동작을 하는 Dram으로 작동하게끔하고 면적을 줄이기위해 주변회로들을 돌리고 넣으며
+테트리스도 어떻게든 해보며 많이 성장하는 계기가 된 것 같다. 분명 혼자였으면 중간에
+지쳐 나가떨어졌을 것이다. 이번 과제를 시작할 때만 해도 1024bit DRAM을 직접 설계한
+다는 것이 막막하게만 느껴졌다. DRAM cell 하나를 만드는 것조차 쉽지 않았는데, 그것
+
+===== PAGE 46 =====
+
+을 수백 개 쌓아 올려 하나의 완성된 메모리를 만든다는 것이 과연 가능한 일인지 솔직
+히 자신이 없었다. 그러나 Precharge, Bootstrap, Sense Amplifier, Restore circuit 하나하나
+를 직접 설계하고 시뮬레이션으로 동작을 확인할 때마다 조금씩 자신감이 붙었고, 그 회
+로들이 하나로 합쳐져 정상적으로 Write와 Read가 되는 순간에는 말로 표현하기 어려운
+뿌듯함이 밀려왔다.
+특히 Layout 작업은 생각보다 훨씬 고되었다. 수십 개의 소자를 규칙에 맞게 배치하고
+routing하는 과정에서 DRC 에러가 쏟아질 때마다 지치기도 했고, 밤을 새워가며 수정을
+반복하는 일도 있었다. 하지만 그렇게 힘들게 완성한 layout이 LVS를 통과를 확인하는
+순간, 그 모든 고생이 한순간에 보람으로 바뀌었다. 이번 과제를 통해 단순히 회로를 그
+리는 것을 넘어서, 반도체 설계가 얼마나 많은 고민과 노력의 산물인지를 몸으로 느낄
+수 있었다. 앞으로도 이 경험이 반도체를 공부하는 데 있어 가장 값진 밑거름이 될 것이
+라 생각한다.
+
+
+
