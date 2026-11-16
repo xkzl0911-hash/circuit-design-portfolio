@@ -7,8 +7,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3140,
-      "sha256": "071a4cad08ba20e36e0d64fd6e273a9f6faff92e0d6f6bbd746bed2e51fad561"
+      "bytes": 3756,
+      "sha256": "201b552d33bc6c5a0c71f2da3b776843e3a4b0fca4bef30d7907b381118cbc2e"
     },
     {
       "path": "reports/Analog/Multistage and Differential Amplifier Design.pdf",
@@ -47,8 +47,13 @@
     },
     {
       "path": "reports/CIM/SRAM-CIM Accelerator.md",
-      "bytes": 821,
-      "sha256": "e517ac8895a854240a946b252b9b67d109d5e5b5c93f9c9f469b39a655a3f2d3"
+      "bytes": 849,
+      "sha256": "8e323265ed958104ae959aaef549d1fa31bf5383779ac29844d1b2366a529bc6"
+    },
+    {
+      "path": "reports/CIS/4-bit CMOS Image Sensor.pdf",
+      "bytes": 3533116,
+      "sha256": "0cb1611cf377681756ceec7359aa9977bb54b6bcdd39b037a9096a47f870c758"
     },
     {
       "path": "reports/CIS/4x4 CMOS Image Sensor.docx",
@@ -394,6 +399,21 @@
       "path": "reports/Digital/FSM Chip Design.txt",
       "bytes": 14444,
       "sha256": "6d515ea54471ea167d21bf89bff02ffa0b60daff6d66f029fdc154c5dae00c98"
+    },
+    {
+      "path": "reports/Electronic/Network Transfer Function Analysis.pdf",
+      "bytes": 3229179,
+      "sha256": "797ad4d2e689a2b3627b9b3c68fa8fc401bb91056a85a6d9d1b0277a0041cac1"
+    },
+    {
+      "path": "reports/Electronic/Op-Amp and Low-Pass Filter Design.pdf",
+      "bytes": 6078178,
+      "sha256": "7eb592e4d45b97a960f1c907972a0983b30188bf561bb550114e885827f45b2f"
+    },
+    {
+      "path": "reports/Electronic/RLC Circuit Analysis.pdf",
+      "bytes": 7213000,
+      "sha256": "ed68bfd7b28c13f0f29f75b09b922c5500ba37832a547f01358fd8d8752120cc"
     },
     {
       "path": "reports/Memory/1K DRAM Architecture.pdf",
