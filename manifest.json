@@ -7,8 +7,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3099,
-      "sha256": "c32dd5edcbd997cf9c768b18c137bcaf6140c0487775952f45f5831ee3040a15"
+      "bytes": 3070,
+      "sha256": "c9e86f06f616dc99feaf051fd27948832e980c7748826a0e5a828728e1cc2bc7"
     },
     {
       "path": "projects/opamp-optimization/.gitignore",
@@ -222,8 +222,8 @@
     },
     {
       "path": "reports/CIM/8T SRAM On-Chip Learning.pdf",
-      "bytes": 2379489,
-      "sha256": "0c830511a68e2abd7b699627e5a7b989279d175f93de79b22288b88e14cf57a5"
+      "bytes": 2290805,
+      "sha256": "b805f9380a09e4b2877482ac353ff4c2334ab08a4d58299c3c9e0c029a21bb1c"
     },
     {
       "path": "reports/CIM/SRAM-CIM Accelerator Proposal.pdf",
