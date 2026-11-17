@@ -7,8 +7,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3013,
-      "sha256": "e708425633e893db5c3fcdee6a04bd8a4788c4819ea902c18920aa2f75397fe4"
+      "bytes": 3099,
+      "sha256": "c32dd5edcbd997cf9c768b18c137bcaf6140c0487775952f45f5831ee3040a15"
     },
     {
       "path": "projects/opamp-optimization/.gitignore",
@@ -219,6 +219,11 @@
       "path": "reports/Analog/Two-Stage Op-Amp Design.pdf",
       "bytes": 3117510,
       "sha256": "1bc2f2b2bd6b365fd3e97640739e8b73caeb3d47fbbcb5c68647e3f4a8811320"
+    },
+    {
+      "path": "reports/CIM/8T SRAM On-Chip Learning.pdf",
+      "bytes": 2379489,
+      "sha256": "0c830511a68e2abd7b699627e5a7b989279d175f93de79b22288b88e14cf57a5"
     },
     {
       "path": "reports/CIM/SRAM-CIM Accelerator Proposal.pdf",
